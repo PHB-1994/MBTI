@@ -32,16 +32,16 @@ class ApiService {
     answers.forEach((questionId, option) {
       answerList.add({
         'questionId' : questionId,
-        'selectOption' : option
+        'selectedOption' : option
       });
     });
 
     final res = await http.post(
       Uri.parse('$url/submit'),
-      headers: {'content-Type':'application/json'},
+      headers: {'Content-Type':'application/json'},
       body: json.encode({
         'userName': userName,
-        'answer': answerList
+        'answers': answerList
       })
     );
 
@@ -50,7 +50,5 @@ class ApiService {
     } else {
       throw Exception('제출 실패');
     }
-
   }
-
 }
