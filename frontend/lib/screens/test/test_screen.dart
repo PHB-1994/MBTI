@@ -4,7 +4,6 @@ import 'package:go_router/go_router.dart';
 
 class TestScreen extends StatefulWidget {
   final String userName;
-
   const TestScreen({super.key, required this.userName});
 
   @override
@@ -77,6 +76,14 @@ class _TestScreenState extends State<TestScreen> {
     try{
       final result = await ApiService.submitTest(widget.userName, answers);
 
+      // mounted : 화면이 존재한다면 기능
+      if(mounted) {
+        context.go("/result", extra: {
+          'userName': widget.userName,
+          'resultType': result['resultType']
+        });
+      }
+      /*
       showDialog(
           context: context,
           builder: (context) => AlertDialog(
@@ -92,6 +99,7 @@ class _TestScreenState extends State<TestScreen> {
             ],
           )
       );
+       */
 
     } catch(e) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -141,16 +149,12 @@ class _TestScreenState extends State<TestScreen> {
     }
 
 
-    // 임시로 2문제만 있으므로 인덱스 처리를 잠시 하는 것이고
-    // 나중에는 삭제할 코드
     int questionIndex = currentQuestion - 1;
 
     if (questionIndex >= questions.length) {
       questionIndex = questions.length - 1;
     }
 
-    // 백엔드에서 가져온 데이터 중에서 현재 질문에 해당하는 데이터를
-    // q 변수이름에 담기
     var q = questions[currentQuestion];
 
     return Scaffold(
@@ -185,15 +189,6 @@ class _TestScreenState extends State<TestScreen> {
 
             // 질문
             Text(
-              /*
-              만약에 데이터가 없을 경우에는 질문 없음이라는 표기를 Text 내부에 사용
-              questions[questionIndex]['text'] ?? '질문없음',
-
-              questions[questionIndex]['text']!,
-               -> data 가 null 이 아니고 반드시 존재한다 라는 표기를 작성
-
-               questions[questionIndex]['text'] as String,
-               */
               q['questionText'] ?? '질문없음',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
