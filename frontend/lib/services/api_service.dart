@@ -50,7 +50,7 @@ class ApiService {
   }
 }
 
-class DynmicApiService {
+class DynamicApiService {
 
   static const String url = 'http://localhost:8080/api/mbti';
 
