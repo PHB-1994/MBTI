@@ -1,9 +1,12 @@
 import 'dart:convert';
+import 'package:frontend/common/constants.dart';
 import 'package:frontend/models/answer_model.dart';
 import 'package:frontend/models/question_model.dart';
 import 'package:frontend/models/result_model.dart';
 import 'package:frontend/models/test_request_model.dart';
 import 'package:http/http.dart' as http;
+
+import '../models/mbti_type_model.dart';
 /* final 에 비해서 const 가벼움
   * 단기적으로 값 변경하지 못하도록 상수처리 할 때 = final
   * 장기적으로 전체 공유하는 상수처리 값 = const
@@ -13,6 +16,111 @@ import 'package:http/http.dart' as http;
   * */
 // models 에 작성한 자료형 변수이름을 활용하여 데이터 타입 지정
 class ApiService {
+  // 상태 관리가 된 url 주소 호출
+  static const String url = ApiConstants.baseUrl;
+
+  static Future<List<Question>> getQuestions() async {
+    final res = await http.get(Uri.parse('$url${ApiConstants.questions}'));
+
+    if(res.statusCode == 200){
+      List<dynamic> jsonList = json.decode(res.body);
+      return jsonList.map((json) => Question.fromJson(json)).toList();
+
+    } else{
+      throw Exception(ErrorMessage.loadFailed);
+    }
+  }
+
+  static Future<Result> submitTest(String userName, Map<int, String> answers) async {
+    List<TestAnswer> answerList = answers.entries.map((en) {
+      return TestAnswer(questionId: en.key, selectedOption: en.value);
+    }).toList();
+
+    TestRequest request = TestRequest(userName: userName, answers: answerList);
+
+    final res = await http.post(
+        Uri.parse('$url${ApiConstants.submit}'),
+        headers: {'Content-Type':'application/json'},
+        body: json.encode(request.toJson())
+    );
+
+    if(res.statusCode == 200) {
+      Map<String, dynamic> jsonData = json.decode(res.body);
+      return Result.fromJson(jsonData);
+
+    } else {
+      throw Exception(ErrorMessage.submitFailed);
+    }
+  }
+
+  static Future<List<Result>> getResultsByUserName(String userName) async {
+    final res = await http.get(Uri.parse('$url${ApiConstants.results}?userName=$userName'));
+
+    if(res.statusCode == 200){
+      List<dynamic> jsonList = json.decode(res.body);
+      return jsonList.map((json) => Result.fromJson(json)).toList();
+    } else {
+      // constants 에서 지정한 에러 타입으로 교체
+      throw Exception(ErrorMessage.loadFailed);
+    }
+  }
+
+  static Future<List<MbtiType>> getAllMbtiTypes() async {
+    final res = await http.get(Uri.parse('$url${ApiConstants.types}'));
+
+    if(res.statusCode == 200) {
+      List<dynamic> jsonList = json.decode(res.body);
+      return jsonList.map((json) => MbtiType.fromJson(json)).toList();
+    } else {
+      throw Exception(ErrorMessage.loadFailed);
+    }
+  }
+
+  static Future<MbtiType> getMbtiTypeByCode(String typeCode) async {
+    final res = await http.get(Uri.parse('$url${ApiConstants.types}$typeCode'));
+
+    if(res.statusCode == 200) {
+      Map<String, dynamic> jsonData = json.decode(res.body);
+      return MbtiType.fromJson(jsonData);
+    } else {
+      throw Exception(ErrorMessage.loadFailed);
+    }
+  }
+
+  // ID 로 결과 조회
+  // GET /api/mbti/result/{id}
+  // method = getResultById(int id)
+  // http.get
+  // map<String, dynamic>
+  static Future<List<Result>> getResultById(int id) async {
+    final res = await http.get(Uri.parse('$url${ApiConstants.result}${id}'))
+  }
+
+  // 결과 삭제
+  // GET /api/mbti/result/{id}
+  // method = deleteResult(int id)
+  // http.delete
+  // final res
+
+  // Health Check = 백엔드 상태 관리용 api
+  // GET /api/mbti/health
+  // healthCheck
+  // final res
+/*
+final               res = http.Response 라는 타입으로 자동 지정
+final http.Response res =
+
+
+final              res = 타입 명식을 하지 않아 Dart 에서 자동으로 반환 타입 파악
+final String       res = 타입을 명확히 지정
+final int          res = 타입을 명확히 지정
+
+final a = 1; // int 로 자동으로 타입 확인
+개발자가 만든 자료형이나 클래스형 자료형은 필히 타입을 작성해주는 것이 좋다.
+ */
+}
+
+class ModelsApiService {
   static const String url = 'http://localhost:8080/api/mbti';
 
   // 백엔드 컨트롤러에서 질문 가져오기
@@ -139,7 +247,30 @@ class ApiService {
       throw Exception('MBTI 유형 불러오기 실패');
     }
   }
-  
+
+  // 모든 MBTI 유형 조회
+  static Future<List<MbtiType>> getAllMbtiTypes() async {
+    final res = await http.get(Uri.parse('$url/types'));
+
+    if(res.statusCode == 200) {
+      List<dynamic> jsonList = json.decode(res.body);
+      return jsonList.map((json) => MbtiType.fromJson(json)).toList();
+    } else {
+      throw Exception('MBTI 유형 불러오기 실패');
+    }
+  }
+
+// 특정 MBTI 유형 조회
+  static Future<MbtiType> getMbtiTypeByCode(String typeCode) async {
+    final res = await http.get(Uri.parse('$url/types/$typeCode'));
+
+    if(res.statusCode == 200) {
+      Map<String, dynamic> jsonData = json.decode(res.body);
+      return MbtiType.fromJson(jsonData);
+    } else {
+      throw Exception('MBTI 유형 조회 실패');
+    }
+  }
 }
 
 /*

@@ -4,6 +4,7 @@ import 'package:frontend/screens/history/result_detail_screen.dart';
 import 'package:frontend/screens/home/home_screen.dart';
 import 'package:frontend/screens/result/result_screen.dart';
 import 'package:frontend/screens/test/test_screen.dart';
+import 'package:frontend/screens/types/mbti_types_screen.dart';
 import 'package:go_router/go_router.dart';
 
 void main() {
@@ -46,7 +47,11 @@ final GoRouter _router = GoRouter(
             // return ResultDetailScreen(userName: state.extra as String);
             //                        required   final userName
             return ResultDetailScreen(userName: userName);
-          })
+          }),
+      GoRoute(
+          path: '/types',
+          builder: (context, state) => const MbtiTypesScreen()
+      )
     ]);
 
 

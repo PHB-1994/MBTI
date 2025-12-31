@@ -41,6 +41,7 @@ class ApiConstants {
   static const String results = '/results';
   static const String types = '/types';
   static const String health = '/health';
+  static const String questions = '/questions';
 }
 
 class AppConstants {
