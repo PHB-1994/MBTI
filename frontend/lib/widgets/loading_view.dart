@@ -1,14 +1,25 @@
 import 'package:flutter/material.dart';
 
 class LoadingView extends StatelessWidget {
-  const LoadingView({super.key});
+  final String? message;
+
+  const LoadingView({super.key, required this.message});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('LoadingView is working'),
-      ),
+    return Center(
+        child: Column(
+          children: [
+            CircularProgressIndicator(),
+            if(message != null) ...[
+              SizedBox(height: 24),
+              Text(
+                message!,
+                style: TextStyle(fontSize: 18, color: Colors.grey[600]),
+              )
+            ]
+          ],
+        )
     );
   }
 }

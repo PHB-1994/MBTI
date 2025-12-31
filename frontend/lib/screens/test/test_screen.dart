@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/models/question_model.dart';
 import 'package:frontend/services/api_service.dart';
+import 'package:frontend/widgets/error_view.dart';
+import 'package:frontend/widgets/loading_view.dart';
 import 'package:go_router/go_router.dart';
 
 class TestScreen extends StatefulWidget {
@@ -17,6 +19,7 @@ class _TestScreenState extends State<TestScreen> {
   int currentQuestion = 0; // 0부터 시작하기 때문에 0 으로 설정
   Map<int, String> answers = {}; // 답변 저장 {질문번호 : 'A' or 'B'}
   bool isLoading = true; // 백엔드 데이터를 가지고 올 동안 잠시 대기하는 로딩 중
+  String? errorMessage;
 
   @override
   void initState() {
@@ -32,10 +35,12 @@ class _TestScreenState extends State<TestScreen> {
       setState(() {
         questions = data;
         isLoading = false;
+        errorMessage = null; // 데이터 무사히 들고왔으면 null 처리
       });
     } catch(e) {
       setState(() {
         isLoading = false;
+        errorMessage = '질문을 불러오는데 실패했습니다.';
       });
     }
   }
@@ -151,9 +156,17 @@ class _TestScreenState extends State<TestScreen> {
         appBar: AppBar(
           title: Text('불러오는 중...'),
         ),
-        body: Center(
-          child: CircularProgressIndicator()
-        ),
+        body: LoadingView(
+            message: '질문을 불러오는 중입니다.'),
+        );
+    }
+
+    if(errorMessage != null) {
+      return Scaffold(
+        appBar: AppBar(title: Text('오류발생'),),
+        //         현재 페이지에서 작성되어 있는 에러 메세지를 전달
+        //         클라이언트가 다시 시도 버튼을 클릭하면 loadQuestions 기능 재실행
+        body: ErrorView(message: errorMessage!, onRetry: loadQuestions,),
       );
     }
 

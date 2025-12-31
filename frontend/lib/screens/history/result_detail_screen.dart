@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 
 /*
 * 과제 : less 로 변경하기
+* 과제 : ErrorView 추가 errorMessage = "검사 기록을 불러오는데 실패했습니다."
 * */
 class ResultDetailScreen extends StatefulWidget {
   /*
