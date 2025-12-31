@@ -91,9 +91,16 @@ class ApiService {
   // GET /api/mbti/result/{id}
   // method = getResultById(int id)
   // http.get
-  // map<String, dynamic>
-  static Future<List<Result>> getResultById(int id) async {
-    final res = await http.get(Uri.parse('$url${ApiConstants.result}${id}'))
+  // Map<String, dynamic>
+  static Future<Result> getResultById(int id) async {
+    final res = await http.get(Uri.parse('$url${ApiConstants.result}/$id'));
+    
+    if(res.statusCode == 200){
+      Map<String, dynamic> jsonData = json.decode(res.body);
+      return Result.fromJson(jsonData);
+    } else {
+      throw Exception(ErrorMessage.loadFailed);
+    }
   }
 
   // 결과 삭제
@@ -101,11 +108,31 @@ class ApiService {
   // method = deleteResult(int id)
   // http.delete
   // final res
+  // Future 예상결과로 백엔드에서 진행한 결과에 대한 return 없이 기능만 수행할 것
+  static Future<void> deleteResult(int id) async {
+    final res = await http.delete(Uri.parse('$url${ApiConstants.result}/$id'));
+    
+    if(res.statusCode != 200) {
+      throw Exception("삭제에 실패했습니다.");
+    }
+  }
 
   // Health Check = 백엔드 상태 관리용 api
   // GET /api/mbti/health
   // healthCheck
   // final res
+  // 개발 회사 상태 확인용
+  static Future<Result> healthCheck() async {
+    final res = await http.get(Uri.parse('$url${ApiConstants.result}${ApiConstants.health}'));
+
+    if(res.statusCode == 200) {
+      Map<String, dynamic> jsonData = json.decode(res.body);
+      return Result.fromJson(jsonData);
+    } else {
+      throw Exception(ErrorMessage.serverError);
+    }
+  }
+
 /*
 final               res = http.Response 라는 타입으로 자동 지정
 final http.Response res =
