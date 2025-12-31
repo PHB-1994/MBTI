@@ -81,6 +81,10 @@ class _ResultDetailScreenState extends State<ResultDetailScreen> {
           // ListView.builder 는 itemCount 가 없으면
           // 내부 목록 리스트에 몇개 만들어야 하는지 예상할 수 없으므로
           // RangeError 가 발생
+      : results.isEmpty
+      ?  Center(
+        child: Text('검사 기록이 없습니다.', style: TextStyle(fontSize: 18)),
+      )
           : ListView.builder(
           padding: EdgeInsets.all(16),
           itemCount: results.length,
