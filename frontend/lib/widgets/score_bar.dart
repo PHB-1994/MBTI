@@ -26,26 +26,23 @@ class ScoreBar extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                '$label1: $score1',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              Text(
-                '$label2: $score2',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              SizedBox(height: 4),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(8),
-                child: LinearProgressIndicator(
-                  value: ratio1,
-                  minHeight: 20,
-                  backgroundColor: Colors.orange[200],
-                  valueColor: AlwaysStoppedAnimation(Colors.blue),
-                ),
-              )
+              Text('$label1: $score1', style: TextStyle(fontWeight: FontWeight.bold)),
+              Text('$label2: $score2', style: TextStyle(fontWeight: FontWeight.bold)),
+              // Row 클래스 내부에서는 SizeBox 를 사용하면 문제가 발생하므로
+              // SizeBox 를 사용하고자 한다면 Row 를 Column 으로 교체한다.
             ],
           ),
+          SizedBox(height: 4),
+          // ClipRRect : 자식 위젯의 모서리를 둥글게 잘라낸 위젯
+          ClipRRect(
+            borderRadius: BorderRadius.circular(8),
+            child: LinearProgressIndicator(
+              value: ratio1,
+              minHeight: 20,
+              backgroundColor: Colors.orange[200],
+              valueColor: AlwaysStoppedAnimation(Colors.blue),
+            ),
+          )
         ],
       ),
     );
