@@ -42,10 +42,10 @@ final GoRouter _router = GoRouter(
       GoRoute(
           path: '/history',
           builder: (context, state) {
-            final data = state.extra as Map<String, dynamic>;
-            return ResultDetailScreen(
-
-            );
+            final userName = state.extra as String;
+            // return ResultDetailScreen(userName: state.extra as String);
+            //                        required   final userName
+            return ResultDetailScreen(userName: userName);
           })
     ]);
 

@@ -52,3 +52,208 @@
 2025-12-30 11:02:29.762  INFO 5280 --- [http-nio-8080-exec-3] c.m.mbti.model.service.MbtiServiceImpl   : Fetching all questions
 2025-12-30 11:02:29.765  INFO 5280 --- [http-nio-8080-exec-3] com.mbti.common.aop.LoggingAspect        : Running Time : 3ms
 2025-12-30 11:02:29.765  INFO 5280 --- [http-nio-8080-exec-3] com.mbti.common.aop.LoggingAspect        : ===================================================================================
+2025-12-30 11:10:49.191  INFO 5280 --- [http-nio-8080-exec-4] com.mbti.common.aop.LoggingAspect        : [MbtiController.getAllQuestions()] 요청 / ip : 127.0.0.1
+2025-12-30 11:10:49.192  INFO 5280 --- [http-nio-8080-exec-4] c.mbti.mbti.controller.MbtiController    : GET /api/mbti/questions - Fetching all questions
+2025-12-30 11:10:49.192  INFO 5280 --- [http-nio-8080-exec-4] com.mbti.common.aop.LoggingAspect        : ========== MbtiServiceImpl.getAllQuestions() 서비스 호출 ==========
+2025-12-30 11:10:49.192  INFO 5280 --- [http-nio-8080-exec-4] com.mbti.common.aop.LoggingAspect        : Parameter : []
+2025-12-30 11:10:49.192  INFO 5280 --- [http-nio-8080-exec-4] c.m.mbti.model.service.MbtiServiceImpl   : Fetching all questions
+2025-12-30 11:10:49.195  INFO 5280 --- [http-nio-8080-exec-4] com.mbti.common.aop.LoggingAspect        : Running Time : 3ms
+2025-12-30 11:10:49.196  INFO 5280 --- [http-nio-8080-exec-4] com.mbti.common.aop.LoggingAspect        : ===================================================================================
+2025-12-30 11:11:36.795  INFO 5280 --- [http-nio-8080-exec-7] com.mbti.common.aop.LoggingAspect        : [MbtiController.submitTest()] 요청 / ip : 127.0.0.1
+2025-12-30 11:11:36.795  INFO 5280 --- [http-nio-8080-exec-7] c.mbti.mbti.controller.MbtiController    : POST /api/mbti/submit - Submitting test for user: 홍길동
+2025-12-30 11:11:36.795  WARN 5280 --- [http-nio-8080-exec-7] c.mbti.mbti.controller.MbtiController    : No answers provided in request
+2025-12-30 11:11:37.845  INFO 5280 --- [http-nio-8080-exec-8] com.mbti.common.aop.LoggingAspect        : [MbtiController.submitTest()] 요청 / ip : 127.0.0.1
+2025-12-30 11:11:37.845  INFO 5280 --- [http-nio-8080-exec-8] c.mbti.mbti.controller.MbtiController    : POST /api/mbti/submit - Submitting test for user: 홍길동
+2025-12-30 11:11:37.845  WARN 5280 --- [http-nio-8080-exec-8] c.mbti.mbti.controller.MbtiController    : No answers provided in request
+2025-12-30 11:11:42.870  INFO 5280 --- [http-nio-8080-exec-9] com.mbti.common.aop.LoggingAspect        : [MbtiController.submitTest()] 요청 / ip : 127.0.0.1
+2025-12-30 11:11:42.870  INFO 5280 --- [http-nio-8080-exec-9] c.mbti.mbti.controller.MbtiController    : POST /api/mbti/submit - Submitting test for user: 홍길동
+2025-12-30 11:11:42.870  WARN 5280 --- [http-nio-8080-exec-9] c.mbti.mbti.controller.MbtiController    : No answers provided in request
+2025-12-30 11:11:48.676  INFO 5280 --- [http-nio-8080-exec-10] com.mbti.common.aop.LoggingAspect        : [MbtiController.submitTest()] 요청 / ip : 127.0.0.1
+2025-12-30 11:11:48.677  INFO 5280 --- [http-nio-8080-exec-10] c.mbti.mbti.controller.MbtiController    : POST /api/mbti/submit - Submitting test for user: 홍길동
+2025-12-30 11:11:48.677  WARN 5280 --- [http-nio-8080-exec-10] c.mbti.mbti.controller.MbtiController    : No answers provided in request
+2025-12-30 11:11:49.236  INFO 5280 --- [http-nio-8080-exec-1] com.mbti.common.aop.LoggingAspect        : [MbtiController.submitTest()] 요청 / ip : 127.0.0.1
+2025-12-30 11:11:49.236  INFO 5280 --- [http-nio-8080-exec-1] c.mbti.mbti.controller.MbtiController    : POST /api/mbti/submit - Submitting test for user: 홍길동
+2025-12-30 11:11:49.236  WARN 5280 --- [http-nio-8080-exec-1] c.mbti.mbti.controller.MbtiController    : No answers provided in request
+2025-12-30 11:13:10.001  INFO 5280 --- [http-nio-8080-exec-2] com.mbti.common.aop.LoggingAspect        : [MbtiController.submitTest()] 요청 / ip : 127.0.0.1
+2025-12-30 11:13:10.001  INFO 5280 --- [http-nio-8080-exec-2] c.mbti.mbti.controller.MbtiController    : POST /api/mbti/submit - Submitting test for user: 홍길동
+2025-12-30 11:13:10.001  WARN 5280 --- [http-nio-8080-exec-2] c.mbti.mbti.controller.MbtiController    : No answers provided in request
+2025-12-30 11:13:11.306  INFO 5280 --- [http-nio-8080-exec-3] com.mbti.common.aop.LoggingAspect        : [MbtiController.submitTest()] 요청 / ip : 127.0.0.1
+2025-12-30 11:13:11.306  INFO 5280 --- [http-nio-8080-exec-3] c.mbti.mbti.controller.MbtiController    : POST /api/mbti/submit - Submitting test for user: 홍길동
+2025-12-30 11:13:11.306  WARN 5280 --- [http-nio-8080-exec-3] c.mbti.mbti.controller.MbtiController    : No answers provided in request
+2025-12-30 11:13:13.018  INFO 5280 --- [http-nio-8080-exec-5] com.mbti.common.aop.LoggingAspect        : [MbtiController.submitTest()] 요청 / ip : 127.0.0.1
+2025-12-30 11:13:13.018  INFO 5280 --- [http-nio-8080-exec-5] c.mbti.mbti.controller.MbtiController    : POST /api/mbti/submit - Submitting test for user: 홍길동
+2025-12-30 11:13:13.018  WARN 5280 --- [http-nio-8080-exec-5] c.mbti.mbti.controller.MbtiController    : No answers provided in request
+2025-12-30 11:13:19.828  INFO 5280 --- [http-nio-8080-exec-4] com.mbti.common.aop.LoggingAspect        : [MbtiController.submitTest()] 요청 / ip : 127.0.0.1
+2025-12-30 11:13:19.828  INFO 5280 --- [http-nio-8080-exec-4] c.mbti.mbti.controller.MbtiController    : POST /api/mbti/submit - Submitting test for user: 홍길동
+2025-12-30 11:13:19.828  WARN 5280 --- [http-nio-8080-exec-4] c.mbti.mbti.controller.MbtiController    : No answers provided in request
+2025-12-30 11:14:18.393  INFO 5280 --- [http-nio-8080-exec-6] com.mbti.common.aop.LoggingAspect        : [MbtiController.submitTest()] 요청 / ip : 127.0.0.1
+2025-12-30 11:14:18.393  INFO 5280 --- [http-nio-8080-exec-6] c.mbti.mbti.controller.MbtiController    : POST /api/mbti/submit - Submitting test for user: 홍길동
+2025-12-30 11:14:18.394  WARN 5280 --- [http-nio-8080-exec-6] c.mbti.mbti.controller.MbtiController    : No answers provided in request
+2025-12-30 11:14:23.894  INFO 5280 --- [http-nio-8080-exec-7] com.mbti.common.aop.LoggingAspect        : [MbtiController.getAllQuestions()] 요청 / ip : 127.0.0.1
+2025-12-30 11:14:23.894  INFO 5280 --- [http-nio-8080-exec-7] c.mbti.mbti.controller.MbtiController    : GET /api/mbti/questions - Fetching all questions
+2025-12-30 11:14:23.895  INFO 5280 --- [http-nio-8080-exec-7] com.mbti.common.aop.LoggingAspect        : ========== MbtiServiceImpl.getAllQuestions() 서비스 호출 ==========
+2025-12-30 11:14:23.895  INFO 5280 --- [http-nio-8080-exec-7] com.mbti.common.aop.LoggingAspect        : Parameter : []
+2025-12-30 11:14:23.895  INFO 5280 --- [http-nio-8080-exec-7] c.m.mbti.model.service.MbtiServiceImpl   : Fetching all questions
+2025-12-30 11:14:23.898  INFO 5280 --- [http-nio-8080-exec-7] com.mbti.common.aop.LoggingAspect        : Running Time : 3ms
+2025-12-30 11:14:23.898  INFO 5280 --- [http-nio-8080-exec-7] com.mbti.common.aop.LoggingAspect        : ===================================================================================
+2025-12-30 11:14:27.010  INFO 5280 --- [http-nio-8080-exec-9] com.mbti.common.aop.LoggingAspect        : [MbtiController.submitTest()] 요청 / ip : 127.0.0.1
+2025-12-30 11:14:27.010  INFO 5280 --- [http-nio-8080-exec-9] c.mbti.mbti.controller.MbtiController    : POST /api/mbti/submit - Submitting test for user: 홍길동
+2025-12-30 11:14:27.010  WARN 5280 --- [http-nio-8080-exec-9] c.mbti.mbti.controller.MbtiController    : No answers provided in request
+2025-12-30 11:15:36.677  INFO 5280 --- [http-nio-8080-exec-10] com.mbti.common.aop.LoggingAspect        : [MbtiController.submitTest()] 요청 / ip : 127.0.0.1
+2025-12-30 11:15:36.677  INFO 5280 --- [http-nio-8080-exec-10] c.mbti.mbti.controller.MbtiController    : POST /api/mbti/submit - Submitting test for user: 홍길동
+2025-12-30 11:15:36.682  INFO 5280 --- [http-nio-8080-exec-10] com.mbti.common.aop.LoggingAspect        : ========== MbtiServiceImpl.submitTest() 서비스 호출 ==========
+2025-12-30 11:15:36.683  INFO 5280 --- [http-nio-8080-exec-10] com.mbti.common.aop.LoggingAspect        : Parameter : [TestRequest(userName=홍길동, answers=[TestAnswer(questionId=1, selectedOption=A), TestAnswer(questionId=2, selectedOption=A), TestAnswer(questionId=3, selectedOption=A), TestAnswer(questionId=4, selectedOption=A), TestAnswer(questionId=5, selectedOption=A), TestAnswer(questionId=6, selectedOption=A), TestAnswer(questionId=7, selectedOption=A), TestAnswer(questionId=8, selectedOption=A), TestAnswer(questionId=9, selectedOption=A), TestAnswer(questionId=10, selectedOption=A), TestAnswer(questionId=11, selectedOption=A), TestAnswer(questionId=12, selectedOption=A)])]
+2025-12-30 11:15:36.687  INFO 5280 --- [http-nio-8080-exec-10] c.m.mbti.model.service.MbtiServiceImpl   : Submitting test for user: 홍길동
+2025-12-30 11:15:36.714  INFO 5280 --- [http-nio-8080-exec-10] c.m.mbti.model.service.MbtiServiceImpl   : Calculated MBTI type: ESTJ
+2025-12-30 11:15:36.744  INFO 5280 --- [http-nio-8080-exec-10] c.m.mbti.model.service.MbtiServiceImpl   : Saved result with id: 1
+2025-12-30 11:15:36.776  INFO 5280 --- [http-nio-8080-exec-10] c.m.mbti.model.service.MbtiServiceImpl   : Saved 12 answers
+2025-12-30 11:15:36.777  INFO 5280 --- [http-nio-8080-exec-10] c.m.mbti.model.service.MbtiServiceImpl   : Fetching result with id: 1
+2025-12-30 11:15:36.784  INFO 5280 --- [http-nio-8080-exec-10] com.mbti.common.aop.LoggingAspect        : Running Time : 101ms
+2025-12-30 11:15:36.784  INFO 5280 --- [http-nio-8080-exec-10] com.mbti.common.aop.LoggingAspect        : ===================================================================================
+2025-12-30 11:16:53.093  INFO 5280 --- [http-nio-8080-exec-2] com.mbti.common.aop.LoggingAspect        : [MbtiController.getAllQuestions()] 요청 / ip : 127.0.0.1
+2025-12-30 11:16:53.094  INFO 5280 --- [http-nio-8080-exec-2] c.mbti.mbti.controller.MbtiController    : GET /api/mbti/questions - Fetching all questions
+2025-12-30 11:16:53.094  INFO 5280 --- [http-nio-8080-exec-2] com.mbti.common.aop.LoggingAspect        : ========== MbtiServiceImpl.getAllQuestions() 서비스 호출 ==========
+2025-12-30 11:16:53.094  INFO 5280 --- [http-nio-8080-exec-2] com.mbti.common.aop.LoggingAspect        : Parameter : []
+2025-12-30 11:16:53.094  INFO 5280 --- [http-nio-8080-exec-2] c.m.mbti.model.service.MbtiServiceImpl   : Fetching all questions
+2025-12-30 11:16:53.096  INFO 5280 --- [http-nio-8080-exec-2] com.mbti.common.aop.LoggingAspect        : Running Time : 2ms
+2025-12-30 11:16:53.096  INFO 5280 --- [http-nio-8080-exec-2] com.mbti.common.aop.LoggingAspect        : ===================================================================================
+2025-12-30 11:16:55.995  INFO 5280 --- [http-nio-8080-exec-5] com.mbti.common.aop.LoggingAspect        : [MbtiController.submitTest()] 요청 / ip : 127.0.0.1
+2025-12-30 11:16:56.029  INFO 5280 --- [http-nio-8080-exec-5] c.mbti.mbti.controller.MbtiController    : POST /api/mbti/submit - Submitting test for user: 홍길동
+2025-12-30 11:16:56.030  INFO 5280 --- [http-nio-8080-exec-5] com.mbti.common.aop.LoggingAspect        : ========== MbtiServiceImpl.submitTest() 서비스 호출 ==========
+2025-12-30 11:16:56.030  INFO 5280 --- [http-nio-8080-exec-5] com.mbti.common.aop.LoggingAspect        : Parameter : [TestRequest(userName=홍길동, answers=[TestAnswer(questionId=1, selectedOption=A), TestAnswer(questionId=2, selectedOption=A), TestAnswer(questionId=3, selectedOption=A), TestAnswer(questionId=4, selectedOption=A), TestAnswer(questionId=5, selectedOption=A), TestAnswer(questionId=6, selectedOption=A), TestAnswer(questionId=7, selectedOption=A), TestAnswer(questionId=8, selectedOption=A), TestAnswer(questionId=9, selectedOption=A), TestAnswer(questionId=10, selectedOption=A), TestAnswer(questionId=11, selectedOption=A), TestAnswer(questionId=12, selectedOption=A)])]
+2025-12-30 11:16:56.030  INFO 5280 --- [http-nio-8080-exec-5] c.m.mbti.model.service.MbtiServiceImpl   : Submitting test for user: 홍길동
+2025-12-30 11:16:56.170  INFO 5280 --- [http-nio-8080-exec-5] c.m.mbti.model.service.MbtiServiceImpl   : Calculated MBTI type: ESTJ
+2025-12-30 11:16:56.171  INFO 5280 --- [http-nio-8080-exec-5] c.m.mbti.model.service.MbtiServiceImpl   : Saved result with id: 2
+2025-12-30 11:16:56.184  INFO 5280 --- [http-nio-8080-exec-5] c.m.mbti.model.service.MbtiServiceImpl   : Saved 12 answers
+2025-12-30 11:16:56.184  INFO 5280 --- [http-nio-8080-exec-5] c.m.mbti.model.service.MbtiServiceImpl   : Fetching result with id: 2
+2025-12-30 11:16:56.186  INFO 5280 --- [http-nio-8080-exec-5] com.mbti.common.aop.LoggingAspect        : Running Time : 156ms
+2025-12-30 11:16:56.186  INFO 5280 --- [http-nio-8080-exec-5] com.mbti.common.aop.LoggingAspect        : ===================================================================================
+2025-12-30 11:36:47.140  INFO 5280 --- [http-nio-8080-exec-6] com.mbti.common.aop.LoggingAspect        : [MbtiController.getAllQuestions()] 요청 / ip : 127.0.0.1
+2025-12-30 11:36:47.141  INFO 5280 --- [http-nio-8080-exec-6] c.mbti.mbti.controller.MbtiController    : GET /api/mbti/questions - Fetching all questions
+2025-12-30 11:36:47.141  INFO 5280 --- [http-nio-8080-exec-6] com.mbti.common.aop.LoggingAspect        : ========== MbtiServiceImpl.getAllQuestions() 서비스 호출 ==========
+2025-12-30 11:36:47.141  INFO 5280 --- [http-nio-8080-exec-6] com.mbti.common.aop.LoggingAspect        : Parameter : []
+2025-12-30 11:36:47.141  INFO 5280 --- [http-nio-8080-exec-6] c.m.mbti.model.service.MbtiServiceImpl   : Fetching all questions
+2025-12-30 11:36:47.146  INFO 5280 --- [http-nio-8080-exec-6] com.mbti.common.aop.LoggingAspect        : Running Time : 5ms
+2025-12-30 11:36:47.146  INFO 5280 --- [http-nio-8080-exec-6] com.mbti.common.aop.LoggingAspect        : ===================================================================================
+2025-12-30 11:37:03.120  INFO 5280 --- [http-nio-8080-exec-8] com.mbti.common.aop.LoggingAspect        : [MbtiController.submitTest()] 요청 / ip : 127.0.0.1
+2025-12-30 11:37:03.120  INFO 5280 --- [http-nio-8080-exec-8] c.mbti.mbti.controller.MbtiController    : POST /api/mbti/submit - Submitting test for user: 홍길동
+2025-12-30 11:37:03.121  INFO 5280 --- [http-nio-8080-exec-8] com.mbti.common.aop.LoggingAspect        : ========== MbtiServiceImpl.submitTest() 서비스 호출 ==========
+2025-12-30 11:37:03.122  INFO 5280 --- [http-nio-8080-exec-8] com.mbti.common.aop.LoggingAspect        : Parameter : [TestRequest(userName=홍길동, answers=[TestAnswer(questionId=1, selectedOption=A), TestAnswer(questionId=2, selectedOption=A), TestAnswer(questionId=3, selectedOption=A), TestAnswer(questionId=4, selectedOption=A), TestAnswer(questionId=5, selectedOption=B), TestAnswer(questionId=6, selectedOption=A), TestAnswer(questionId=7, selectedOption=A), TestAnswer(questionId=8, selectedOption=A), TestAnswer(questionId=9, selectedOption=A), TestAnswer(questionId=10, selectedOption=B), TestAnswer(questionId=11, selectedOption=B), TestAnswer(questionId=12, selectedOption=A)])]
+2025-12-30 11:37:03.122  INFO 5280 --- [http-nio-8080-exec-8] c.m.mbti.model.service.MbtiServiceImpl   : Submitting test for user: 홍길동
+2025-12-30 11:37:03.150  INFO 5280 --- [http-nio-8080-exec-8] c.m.mbti.model.service.MbtiServiceImpl   : Calculated MBTI type: ESTP
+2025-12-30 11:37:03.154  INFO 5280 --- [http-nio-8080-exec-8] c.m.mbti.model.service.MbtiServiceImpl   : Saved result with id: 3
+2025-12-30 11:37:03.165  INFO 5280 --- [http-nio-8080-exec-8] c.m.mbti.model.service.MbtiServiceImpl   : Saved 12 answers
+2025-12-30 11:37:03.166  INFO 5280 --- [http-nio-8080-exec-8] c.m.mbti.model.service.MbtiServiceImpl   : Fetching result with id: 3
+2025-12-30 11:37:03.170  INFO 5280 --- [http-nio-8080-exec-8] com.mbti.common.aop.LoggingAspect        : Running Time : 48ms
+2025-12-30 11:37:03.170  INFO 5280 --- [http-nio-8080-exec-8] com.mbti.common.aop.LoggingAspect        : ===================================================================================
+2025-12-30 11:56:26.721  INFO 5280 --- [http-nio-8080-exec-10] com.mbti.common.aop.LoggingAspect        : [MbtiController.getAllQuestions()] 요청 / ip : 127.0.0.1
+2025-12-30 11:56:26.722  INFO 5280 --- [http-nio-8080-exec-10] c.mbti.mbti.controller.MbtiController    : GET /api/mbti/questions - Fetching all questions
+2025-12-30 11:56:26.722  INFO 5280 --- [http-nio-8080-exec-10] com.mbti.common.aop.LoggingAspect        : ========== MbtiServiceImpl.getAllQuestions() 서비스 호출 ==========
+2025-12-30 11:56:26.722  INFO 5280 --- [http-nio-8080-exec-10] com.mbti.common.aop.LoggingAspect        : Parameter : []
+2025-12-30 11:56:26.722  INFO 5280 --- [http-nio-8080-exec-10] c.m.mbti.model.service.MbtiServiceImpl   : Fetching all questions
+2025-12-30 11:56:26.724  INFO 5280 --- [http-nio-8080-exec-10] com.mbti.common.aop.LoggingAspect        : Running Time : 2ms
+2025-12-30 11:56:26.724  INFO 5280 --- [http-nio-8080-exec-10] com.mbti.common.aop.LoggingAspect        : ===================================================================================
+2025-12-30 11:56:32.817  INFO 5280 --- [http-nio-8080-exec-2] com.mbti.common.aop.LoggingAspect        : [MbtiController.submitTest()] 요청 / ip : 127.0.0.1
+2025-12-30 11:56:32.817  INFO 5280 --- [http-nio-8080-exec-2] c.mbti.mbti.controller.MbtiController    : POST /api/mbti/submit - Submitting test for user: 홍길동
+2025-12-30 11:56:32.818  INFO 5280 --- [http-nio-8080-exec-2] com.mbti.common.aop.LoggingAspect        : ========== MbtiServiceImpl.submitTest() 서비스 호출 ==========
+2025-12-30 11:56:32.818  INFO 5280 --- [http-nio-8080-exec-2] com.mbti.common.aop.LoggingAspect        : Parameter : [TestRequest(userName=홍길동, answers=[TestAnswer(questionId=1, selectedOption=A), TestAnswer(questionId=2, selectedOption=B), TestAnswer(questionId=3, selectedOption=A), TestAnswer(questionId=4, selectedOption=B), TestAnswer(questionId=5, selectedOption=A), TestAnswer(questionId=6, selectedOption=B), TestAnswer(questionId=7, selectedOption=A), TestAnswer(questionId=8, selectedOption=B), TestAnswer(questionId=9, selectedOption=A), TestAnswer(questionId=10, selectedOption=B), TestAnswer(questionId=11, selectedOption=A), TestAnswer(questionId=12, selectedOption=A)])]
+2025-12-30 11:56:32.818  INFO 5280 --- [http-nio-8080-exec-2] c.m.mbti.model.service.MbtiServiceImpl   : Submitting test for user: 홍길동
+2025-12-30 11:56:32.824  INFO 5280 --- [http-nio-8080-exec-2] c.m.mbti.model.service.MbtiServiceImpl   : Calculated MBTI type: ENTJ
+2025-12-30 11:56:32.825  INFO 5280 --- [http-nio-8080-exec-2] c.m.mbti.model.service.MbtiServiceImpl   : Saved result with id: 4
+2025-12-30 11:56:32.833  INFO 5280 --- [http-nio-8080-exec-2] c.m.mbti.model.service.MbtiServiceImpl   : Saved 12 answers
+2025-12-30 11:56:32.833  INFO 5280 --- [http-nio-8080-exec-2] c.m.mbti.model.service.MbtiServiceImpl   : Fetching result with id: 4
+2025-12-30 11:56:32.835  INFO 5280 --- [http-nio-8080-exec-2] com.mbti.common.aop.LoggingAspect        : Running Time : 17ms
+2025-12-30 11:56:32.836  INFO 5280 --- [http-nio-8080-exec-2] com.mbti.common.aop.LoggingAspect        : ===================================================================================
+2025-12-30 11:59:20.072  INFO 5280 --- [http-nio-8080-exec-5] com.mbti.common.aop.LoggingAspect        : [MbtiController.getAllQuestions()] 요청 / ip : 127.0.0.1
+2025-12-30 11:59:20.072  INFO 5280 --- [http-nio-8080-exec-5] c.mbti.mbti.controller.MbtiController    : GET /api/mbti/questions - Fetching all questions
+2025-12-30 11:59:20.072  INFO 5280 --- [http-nio-8080-exec-5] com.mbti.common.aop.LoggingAspect        : ========== MbtiServiceImpl.getAllQuestions() 서비스 호출 ==========
+2025-12-30 11:59:20.072  INFO 5280 --- [http-nio-8080-exec-5] com.mbti.common.aop.LoggingAspect        : Parameter : []
+2025-12-30 11:59:20.072  INFO 5280 --- [http-nio-8080-exec-5] c.m.mbti.model.service.MbtiServiceImpl   : Fetching all questions
+2025-12-30 11:59:20.077  INFO 5280 --- [http-nio-8080-exec-5] com.mbti.common.aop.LoggingAspect        : Running Time : 5ms
+2025-12-30 11:59:20.078  INFO 5280 --- [http-nio-8080-exec-5] com.mbti.common.aop.LoggingAspect        : ===================================================================================
+2025-12-30 11:59:23.223  INFO 5280 --- [http-nio-8080-exec-6] com.mbti.common.aop.LoggingAspect        : [MbtiController.submitTest()] 요청 / ip : 127.0.0.1
+2025-12-30 11:59:23.223  INFO 5280 --- [http-nio-8080-exec-6] c.mbti.mbti.controller.MbtiController    : POST /api/mbti/submit - Submitting test for user: 홍길동
+2025-12-30 11:59:23.223  INFO 5280 --- [http-nio-8080-exec-6] com.mbti.common.aop.LoggingAspect        : ========== MbtiServiceImpl.submitTest() 서비스 호출 ==========
+2025-12-30 11:59:23.223  INFO 5280 --- [http-nio-8080-exec-6] com.mbti.common.aop.LoggingAspect        : Parameter : [TestRequest(userName=홍길동, answers=[TestAnswer(questionId=1, selectedOption=A), TestAnswer(questionId=2, selectedOption=A), TestAnswer(questionId=3, selectedOption=A), TestAnswer(questionId=4, selectedOption=A), TestAnswer(questionId=5, selectedOption=A), TestAnswer(questionId=6, selectedOption=A), TestAnswer(questionId=7, selectedOption=A), TestAnswer(questionId=8, selectedOption=A), TestAnswer(questionId=9, selectedOption=A), TestAnswer(questionId=10, selectedOption=A), TestAnswer(questionId=11, selectedOption=A), TestAnswer(questionId=12, selectedOption=A)])]
+2025-12-30 11:59:23.223  INFO 5280 --- [http-nio-8080-exec-6] c.m.mbti.model.service.MbtiServiceImpl   : Submitting test for user: 홍길동
+2025-12-30 11:59:23.232  INFO 5280 --- [http-nio-8080-exec-6] c.m.mbti.model.service.MbtiServiceImpl   : Calculated MBTI type: ESTJ
+2025-12-30 11:59:23.235  INFO 5280 --- [http-nio-8080-exec-6] c.m.mbti.model.service.MbtiServiceImpl   : Saved result with id: 5
+2025-12-30 11:59:23.249  INFO 5280 --- [http-nio-8080-exec-6] c.m.mbti.model.service.MbtiServiceImpl   : Saved 12 answers
+2025-12-30 11:59:23.249  INFO 5280 --- [http-nio-8080-exec-6] c.m.mbti.model.service.MbtiServiceImpl   : Fetching result with id: 5
+2025-12-30 11:59:23.253  INFO 5280 --- [http-nio-8080-exec-6] com.mbti.common.aop.LoggingAspect        : Running Time : 30ms
+2025-12-30 11:59:23.253  INFO 5280 --- [http-nio-8080-exec-6] com.mbti.common.aop.LoggingAspect        : ===================================================================================
+2025-12-30 11:59:45.233  INFO 5280 --- [http-nio-8080-exec-8] com.mbti.common.aop.LoggingAspect        : [MbtiController.getAllQuestions()] 요청 / ip : 127.0.0.1
+2025-12-30 11:59:45.233  INFO 5280 --- [http-nio-8080-exec-8] c.mbti.mbti.controller.MbtiController    : GET /api/mbti/questions - Fetching all questions
+2025-12-30 11:59:45.233  INFO 5280 --- [http-nio-8080-exec-8] com.mbti.common.aop.LoggingAspect        : ========== MbtiServiceImpl.getAllQuestions() 서비스 호출 ==========
+2025-12-30 11:59:45.233  INFO 5280 --- [http-nio-8080-exec-8] com.mbti.common.aop.LoggingAspect        : Parameter : []
+2025-12-30 11:59:45.233  INFO 5280 --- [http-nio-8080-exec-8] c.m.mbti.model.service.MbtiServiceImpl   : Fetching all questions
+2025-12-30 11:59:45.235  INFO 5280 --- [http-nio-8080-exec-8] com.mbti.common.aop.LoggingAspect        : Running Time : 2ms
+2025-12-30 11:59:45.235  INFO 5280 --- [http-nio-8080-exec-8] com.mbti.common.aop.LoggingAspect        : ===================================================================================
+2025-12-30 11:59:49.634  INFO 5280 --- [http-nio-8080-exec-10] com.mbti.common.aop.LoggingAspect        : [MbtiController.submitTest()] 요청 / ip : 127.0.0.1
+2025-12-30 11:59:49.634  INFO 5280 --- [http-nio-8080-exec-10] c.mbti.mbti.controller.MbtiController    : POST /api/mbti/submit - Submitting test for user: 홍길동
+2025-12-30 11:59:49.635  INFO 5280 --- [http-nio-8080-exec-10] com.mbti.common.aop.LoggingAspect        : ========== MbtiServiceImpl.submitTest() 서비스 호출 ==========
+2025-12-30 11:59:49.635  INFO 5280 --- [http-nio-8080-exec-10] com.mbti.common.aop.LoggingAspect        : Parameter : [TestRequest(userName=홍길동, answers=[TestAnswer(questionId=1, selectedOption=B), TestAnswer(questionId=2, selectedOption=B), TestAnswer(questionId=3, selectedOption=B), TestAnswer(questionId=4, selectedOption=B), TestAnswer(questionId=5, selectedOption=B), TestAnswer(questionId=6, selectedOption=B), TestAnswer(questionId=7, selectedOption=B), TestAnswer(questionId=8, selectedOption=B), TestAnswer(questionId=9, selectedOption=B), TestAnswer(questionId=10, selectedOption=B), TestAnswer(questionId=11, selectedOption=B), TestAnswer(questionId=12, selectedOption=B)])]
+2025-12-30 11:59:49.635  INFO 5280 --- [http-nio-8080-exec-10] c.m.mbti.model.service.MbtiServiceImpl   : Submitting test for user: 홍길동
+2025-12-30 11:59:49.641  INFO 5280 --- [http-nio-8080-exec-10] c.m.mbti.model.service.MbtiServiceImpl   : Calculated MBTI type: INFP
+2025-12-30 11:59:49.642  INFO 5280 --- [http-nio-8080-exec-10] c.m.mbti.model.service.MbtiServiceImpl   : Saved result with id: 6
+2025-12-30 11:59:49.651  INFO 5280 --- [http-nio-8080-exec-10] c.m.mbti.model.service.MbtiServiceImpl   : Saved 12 answers
+2025-12-30 11:59:49.651  INFO 5280 --- [http-nio-8080-exec-10] c.m.mbti.model.service.MbtiServiceImpl   : Fetching result with id: 6
+2025-12-30 11:59:49.653  INFO 5280 --- [http-nio-8080-exec-10] com.mbti.common.aop.LoggingAspect        : Running Time : 18ms
+2025-12-30 11:59:49.654  INFO 5280 --- [http-nio-8080-exec-10] com.mbti.common.aop.LoggingAspect        : ===================================================================================
+2025-12-30 12:00:15.216  INFO 5280 --- [http-nio-8080-exec-2] com.mbti.common.aop.LoggingAspect        : [MbtiController.getAllQuestions()] 요청 / ip : 127.0.0.1
+2025-12-30 12:00:15.216  INFO 5280 --- [http-nio-8080-exec-2] c.mbti.mbti.controller.MbtiController    : GET /api/mbti/questions - Fetching all questions
+2025-12-30 12:00:15.216  INFO 5280 --- [http-nio-8080-exec-2] com.mbti.common.aop.LoggingAspect        : ========== MbtiServiceImpl.getAllQuestions() 서비스 호출 ==========
+2025-12-30 12:00:15.216  INFO 5280 --- [http-nio-8080-exec-2] com.mbti.common.aop.LoggingAspect        : Parameter : []
+2025-12-30 12:00:15.216  INFO 5280 --- [http-nio-8080-exec-2] c.m.mbti.model.service.MbtiServiceImpl   : Fetching all questions
+2025-12-30 12:00:15.218  INFO 5280 --- [http-nio-8080-exec-2] com.mbti.common.aop.LoggingAspect        : Running Time : 2ms
+2025-12-30 12:00:15.218  INFO 5280 --- [http-nio-8080-exec-2] com.mbti.common.aop.LoggingAspect        : ===================================================================================
+2025-12-30 12:00:18.703  INFO 5280 --- [http-nio-8080-exec-5] com.mbti.common.aop.LoggingAspect        : [MbtiController.submitTest()] 요청 / ip : 127.0.0.1
+2025-12-30 12:00:18.703  INFO 5280 --- [http-nio-8080-exec-5] c.mbti.mbti.controller.MbtiController    : POST /api/mbti/submit - Submitting test for user: ㅇ
+2025-12-30 12:00:18.704  INFO 5280 --- [http-nio-8080-exec-5] com.mbti.common.aop.LoggingAspect        : ========== MbtiServiceImpl.submitTest() 서비스 호출 ==========
+2025-12-30 12:00:18.704  INFO 5280 --- [http-nio-8080-exec-5] com.mbti.common.aop.LoggingAspect        : Parameter : [TestRequest(userName=ㅇ, answers=[TestAnswer(questionId=1, selectedOption=B), TestAnswer(questionId=2, selectedOption=B), TestAnswer(questionId=3, selectedOption=A), TestAnswer(questionId=4, selectedOption=A), TestAnswer(questionId=5, selectedOption=A), TestAnswer(questionId=6, selectedOption=B), TestAnswer(questionId=7, selectedOption=B), TestAnswer(questionId=8, selectedOption=B), TestAnswer(questionId=9, selectedOption=A), TestAnswer(questionId=10, selectedOption=A), TestAnswer(questionId=11, selectedOption=A), TestAnswer(questionId=12, selectedOption=A)])]
+2025-12-30 12:00:18.704  INFO 5280 --- [http-nio-8080-exec-5] c.m.mbti.model.service.MbtiServiceImpl   : Submitting test for user: ㅇ
+2025-12-30 12:00:18.709  INFO 5280 --- [http-nio-8080-exec-5] c.m.mbti.model.service.MbtiServiceImpl   : Calculated MBTI type: ISFJ
+2025-12-30 12:00:18.710  INFO 5280 --- [http-nio-8080-exec-5] c.m.mbti.model.service.MbtiServiceImpl   : Saved result with id: 7
+2025-12-30 12:00:18.722  INFO 5280 --- [http-nio-8080-exec-5] c.m.mbti.model.service.MbtiServiceImpl   : Saved 12 answers
+2025-12-30 12:00:18.722  INFO 5280 --- [http-nio-8080-exec-5] c.m.mbti.model.service.MbtiServiceImpl   : Fetching result with id: 7
+2025-12-30 12:00:18.724  INFO 5280 --- [http-nio-8080-exec-5] com.mbti.common.aop.LoggingAspect        : Running Time : 20ms
+2025-12-30 12:00:18.725  INFO 5280 --- [http-nio-8080-exec-5] com.mbti.common.aop.LoggingAspect        : ===================================================================================
+2025-12-30 12:12:40.906  INFO 5280 --- [http-nio-8080-exec-6] com.mbti.common.aop.LoggingAspect        : [MbtiController.getAllQuestions()] 요청 / ip : 127.0.0.1
+2025-12-30 12:12:40.907  INFO 5280 --- [http-nio-8080-exec-6] c.mbti.mbti.controller.MbtiController    : GET /api/mbti/questions - Fetching all questions
+2025-12-30 12:12:40.907  INFO 5280 --- [http-nio-8080-exec-6] com.mbti.common.aop.LoggingAspect        : ========== MbtiServiceImpl.getAllQuestions() 서비스 호출 ==========
+2025-12-30 12:12:40.907  INFO 5280 --- [http-nio-8080-exec-6] com.mbti.common.aop.LoggingAspect        : Parameter : []
+2025-12-30 12:12:40.907  INFO 5280 --- [http-nio-8080-exec-6] c.m.mbti.model.service.MbtiServiceImpl   : Fetching all questions
+2025-12-30 12:12:40.910  INFO 5280 --- [http-nio-8080-exec-6] com.mbti.common.aop.LoggingAspect        : Running Time : 3ms
+2025-12-30 12:12:40.911  INFO 5280 --- [http-nio-8080-exec-6] com.mbti.common.aop.LoggingAspect        : ===================================================================================
+2025-12-30 12:12:43.860  INFO 5280 --- [http-nio-8080-exec-8] com.mbti.common.aop.LoggingAspect        : [MbtiController.submitTest()] 요청 / ip : 127.0.0.1
+2025-12-30 12:12:43.860  INFO 5280 --- [http-nio-8080-exec-8] c.mbti.mbti.controller.MbtiController    : POST /api/mbti/submit - Submitting test for user: 홍길동
+2025-12-30 12:12:43.861  INFO 5280 --- [http-nio-8080-exec-8] com.mbti.common.aop.LoggingAspect        : ========== MbtiServiceImpl.submitTest() 서비스 호출 ==========
+2025-12-30 12:12:43.861  INFO 5280 --- [http-nio-8080-exec-8] com.mbti.common.aop.LoggingAspect        : Parameter : [TestRequest(userName=홍길동, answers=[TestAnswer(questionId=1, selectedOption=B), TestAnswer(questionId=2, selectedOption=B), TestAnswer(questionId=3, selectedOption=A), TestAnswer(questionId=4, selectedOption=A), TestAnswer(questionId=5, selectedOption=A), TestAnswer(questionId=6, selectedOption=A), TestAnswer(questionId=7, selectedOption=A), TestAnswer(questionId=8, selectedOption=A), TestAnswer(questionId=9, selectedOption=A), TestAnswer(questionId=10, selectedOption=A), TestAnswer(questionId=11, selectedOption=A), TestAnswer(questionId=12, selectedOption=A)])]
+2025-12-30 12:12:43.861  INFO 5280 --- [http-nio-8080-exec-8] c.m.mbti.model.service.MbtiServiceImpl   : Submitting test for user: 홍길동
+2025-12-30 12:12:43.866  INFO 5280 --- [http-nio-8080-exec-8] c.m.mbti.model.service.MbtiServiceImpl   : Calculated MBTI type: ISTJ
+2025-12-30 12:12:43.867  INFO 5280 --- [http-nio-8080-exec-8] c.m.mbti.model.service.MbtiServiceImpl   : Saved result with id: 8
+2025-12-30 12:12:43.873  INFO 5280 --- [http-nio-8080-exec-8] c.m.mbti.model.service.MbtiServiceImpl   : Saved 12 answers
+2025-12-30 12:12:43.874  INFO 5280 --- [http-nio-8080-exec-8] c.m.mbti.model.service.MbtiServiceImpl   : Fetching result with id: 8
+2025-12-30 12:12:43.875  INFO 5280 --- [http-nio-8080-exec-8] com.mbti.common.aop.LoggingAspect        : Running Time : 14ms
+2025-12-30 12:12:43.875  INFO 5280 --- [http-nio-8080-exec-8] com.mbti.common.aop.LoggingAspect        : ===================================================================================
+2025-12-30 14:06:09.653  WARN 5280 --- [MyHikariCP housekeeper] com.zaxxer.hikari.pool.HikariPool        : MyHikariCP - Thread starvation or clock leap detected (housekeeper delta=14m10s101ms187µs700ns).
+2025-12-30 15:11:56.113  INFO 5280 --- [http-nio-8080-exec-10] com.mbti.common.aop.LoggingAspect        : [MbtiController.getAllQuestions()] 요청 / ip : 127.0.0.1
+2025-12-30 15:11:56.115  INFO 5280 --- [http-nio-8080-exec-10] c.mbti.mbti.controller.MbtiController    : GET /api/mbti/questions - Fetching all questions
+2025-12-30 15:11:56.115  INFO 5280 --- [http-nio-8080-exec-10] com.mbti.common.aop.LoggingAspect        : ========== MbtiServiceImpl.getAllQuestions() 서비스 호출 ==========
+2025-12-30 15:11:56.115  INFO 5280 --- [http-nio-8080-exec-10] com.mbti.common.aop.LoggingAspect        : Parameter : []
+2025-12-30 15:11:56.116  INFO 5280 --- [http-nio-8080-exec-10] c.m.mbti.model.service.MbtiServiceImpl   : Fetching all questions
+2025-12-30 15:11:56.136  INFO 5280 --- [http-nio-8080-exec-10] com.mbti.common.aop.LoggingAspect        : Running Time : 20ms
+2025-12-30 15:11:56.137  INFO 5280 --- [http-nio-8080-exec-10] com.mbti.common.aop.LoggingAspect        : ===================================================================================
+2025-12-30 15:12:04.519  INFO 5280 --- [http-nio-8080-exec-2] com.mbti.common.aop.LoggingAspect        : [MbtiController.submitTest()] 요청 / ip : 127.0.0.1
+2025-12-30 15:12:04.519  INFO 5280 --- [http-nio-8080-exec-2] c.mbti.mbti.controller.MbtiController    : POST /api/mbti/submit - Submitting test for user: 홍길동
+2025-12-30 15:12:04.520  INFO 5280 --- [http-nio-8080-exec-2] com.mbti.common.aop.LoggingAspect        : ========== MbtiServiceImpl.submitTest() 서비스 호출 ==========
+2025-12-30 15:12:04.520  INFO 5280 --- [http-nio-8080-exec-2] com.mbti.common.aop.LoggingAspect        : Parameter : [TestRequest(userName=홍길동, answers=[TestAnswer(questionId=1, selectedOption=A), TestAnswer(questionId=2, selectedOption=B), TestAnswer(questionId=3, selectedOption=B), TestAnswer(questionId=4, selectedOption=A), TestAnswer(questionId=5, selectedOption=B), TestAnswer(questionId=6, selectedOption=A), TestAnswer(questionId=7, selectedOption=B), TestAnswer(questionId=8, selectedOption=A), TestAnswer(questionId=9, selectedOption=A), TestAnswer(questionId=10, selectedOption=B), TestAnswer(questionId=11, selectedOption=A), TestAnswer(questionId=12, selectedOption=A)])]
+2025-12-30 15:12:04.521  INFO 5280 --- [http-nio-8080-exec-2] c.m.mbti.model.service.MbtiServiceImpl   : Submitting test for user: 홍길동
+2025-12-30 15:12:04.526  INFO 5280 --- [http-nio-8080-exec-2] c.m.mbti.model.service.MbtiServiceImpl   : Calculated MBTI type: ISTJ
+2025-12-30 15:12:04.530  INFO 5280 --- [http-nio-8080-exec-2] c.m.mbti.model.service.MbtiServiceImpl   : Saved result with id: 9
+2025-12-30 15:12:04.541  INFO 5280 --- [http-nio-8080-exec-2] c.m.mbti.model.service.MbtiServiceImpl   : Saved 12 answers
+2025-12-30 15:12:04.541  INFO 5280 --- [http-nio-8080-exec-2] c.m.mbti.model.service.MbtiServiceImpl   : Fetching result with id: 9
+2025-12-30 15:12:04.546  INFO 5280 --- [http-nio-8080-exec-2] com.mbti.common.aop.LoggingAspect        : Running Time : 26ms
+2025-12-30 15:12:04.546  INFO 5280 --- [http-nio-8080-exec-2] com.mbti.common.aop.LoggingAspect        : ===================================================================================
+2025-12-30 15:20:49.875  INFO 5280 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : MyHikariCP - Shutdown initiated...
+2025-12-30 15:20:49.891  INFO 5280 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : MyHikariCP - Shutdown completed.
