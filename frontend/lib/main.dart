@@ -3,6 +3,7 @@ import 'package:frontend/common/constants.dart';
 import 'package:frontend/models/result_model.dart';
 import 'package:frontend/screens/history/result_detail_screen.dart';
 import 'package:frontend/screens/home/home_screen.dart';
+import 'package:frontend/screens/login/login_screen.dart';
 import 'package:frontend/screens/result/result_screen.dart';
 import 'package:frontend/screens/test/test_screen.dart';
 import 'package:frontend/screens/types/mbti_types_screen.dart';
@@ -17,7 +18,14 @@ final GoRouter _router = GoRouter(
     routes: [
       GoRoute(
           path: '/',
-          builder: (context, state) => const HomeScreen()),
+          builder: (context, state) => const HomeScreen()
+      ),
+
+      // 로그인 화면
+      GoRoute(
+          path: '/login',
+          builder: (context, state) => const LoginScreen()
+      ),
 
       // 검사 화면
       GoRoute(

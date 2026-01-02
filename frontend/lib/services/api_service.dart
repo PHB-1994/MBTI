@@ -7,6 +7,7 @@ import 'package:frontend/models/test_request_model.dart';
 import 'package:http/http.dart' as http;
 
 import '../models/mbti_type_model.dart';
+import '../models/user_model.dart';
 /* final 에 비해서 const 가벼움
   * 단기적으로 값 변경하지 못하도록 상수처리 할 때 = final
   * 장기적으로 전체 공유하는 상수처리 값 = const
@@ -19,6 +20,30 @@ class ApiService {
   // 상태 관리가 된 url 주소 호출
   static const String url = ApiConstants.baseUrl;
 
+  // =================== 사용자 관련 API ======================
+  // 로그인
+  static Future<User> login(String userName) async {
+    final res = await http.post(
+      Uri.parse('$url${ApiConstants.userUrl}'),
+      headers: {'Content-type':'application/json'},
+      body: json.encode({'userName': userName})
+    );
+
+    if(res.statusCode == 200){
+      Map<String, dynamic> jsonData = json.decode(res.body);
+      return User.fromJson(jsonData);
+    } else {
+      throw Exception(ErrorMessage.submitFailed);
+    }
+  }
+
+  // 사용자명으로 사용자 조회
+  // static Future<User?> getUserByUserName(String userName)
+
+  // 모든 사용자 조회
+  // static Future<List<User>> getAllUsers()
+
+  // =================== 질문 관련 API ======================
   static Future<List<Question>> getQuestions() async {
     final res = await http.get(Uri.parse('$url${ApiConstants.questions}'));
 
@@ -31,6 +56,7 @@ class ApiService {
     }
   }
 
+  // =================== 검사 제출 API ======================
   static Future<Result> submitTest(String userName, Map<int, String> answers) async {
     List<TestAnswer> answerList = answers.entries.map((en) {
       return TestAnswer(questionId: en.key, selectedOption: en.value);
