@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/models/result_model.dart';
 import 'package:frontend/widgets/score_bar.dart';
 import 'package:go_router/go_router.dart';
 // result 스크린에서 채팅을 하거나, 숫자값을 추가하거나 실질적으로 화면 자체에서 변경되는 데이터가 없으므로
@@ -7,6 +8,13 @@ import 'package:go_router/go_router.dart';
 
 // 과제 : 로딩중 화면 메세지 없이 import 하여 개발자가 원하는 본인 방식대로 추가
 class ResultScreen extends StatefulWidget {
+  final Result result;
+
+  const ResultScreen({
+    super.key,
+    required this.result
+});
+  /*
   final String userName;
   final String resultType;
   final int eScore;
@@ -31,6 +39,7 @@ class ResultScreen extends StatefulWidget {
     required this.jScore,
     required this.pScore,
   });
+   */
 
   @override
   State<ResultScreen> createState() => _ResultScreenState();
@@ -80,10 +89,10 @@ class _ResultScreenState extends State<ResultScreen> {
                 ),
                 child: Column(
                   children: [
-                    Text('${widget.userName}님의 MBTI는'),
+                    Text('${widget.result.userName}님의 MBTI는'),
                     SizedBox(height: 20),
 
-                    Text('${widget.resultType}'),
+                    Text('${widget.result.resultType}'),
                     SizedBox(height: 10),
 
                     Text('입니다')
@@ -115,26 +124,26 @@ class _ResultScreenState extends State<ResultScreen> {
                     ScoreBar(
                       label1: 'E (외향)',
                       label2: 'I (내향)',
-                      score1: widget.eScore,
-                      score2: widget.iScore,
+                      score1: widget.result.eScore,
+                      score2: widget.result.iScore,
                     ),
                     ScoreBar(
                       label1: 'S (감각)',
                       label2: 'N (직관)',
-                      score1: widget.sScore,
-                      score2: widget.nScore,
+                      score1: widget.result.sScore,
+                      score2: widget.result.nScore,
                     ),
                     ScoreBar(
                       label1: 'T (사고)',
                       label2: 'F (감정)',
-                      score1: widget.tScore,
-                      score2: widget.fScore,
+                      score1: widget.result.tScore,
+                      score2: widget.result.fScore,
                     ),
                     ScoreBar(
                       label1: 'J (판단)',
                       label2: 'P (인식)',
-                      score1: widget.jScore,
-                      score2: widget.pScore,
+                      score1: widget.result.jScore,
+                      score2: widget.result.pScore,
                     ),
                   ],
                 ),

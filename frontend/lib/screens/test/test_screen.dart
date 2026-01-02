@@ -83,20 +83,6 @@ class _TestScreenState extends State<TestScreen> {
       final result = await ApiService.submitTest(widget.userName, answers);
 
       // mounted : 화면이 존재한다면 기능
-      if(mounted) {
-        context.go("/result", extra: {
-          'userName': widget.userName,
-          'resultType': result.resultType,
-          'eScore':  result.eScore,
-          'iScore':  result.iScore,
-          'sScore':  result.sScore,
-          'nScore':  result.nScore,
-          'tScore':  result.tScore,
-          'fScore':  result.fScore,
-          'jScore':  result.jScore,
-          'pScore':  result.pScore,
-        });
-      }
       /*
       showDialog(
           context: context,
@@ -114,6 +100,28 @@ class _TestScreenState extends State<TestScreen> {
           )
       );
        */
+      if(mounted) {
+        context.go("/result",
+          extra: result,
+        );
+      }
+      /*
+      if(mounted) {
+        context.go("/result", extra: {
+          'userName': widget.userName,
+          'resultType': result.resultType,
+          'eScore':  result.eScore,
+          'iScore':  result.iScore,
+          'sScore':  result.sScore,
+          'nScore':  result.nScore,
+          'tScore':  result.tScore,
+          'fScore':  result.fScore,
+          'jScore':  result.jScore,
+          'pScore':  result.pScore,
+        });
+      }
+       */
+
 
     } catch(e) {
       ScaffoldMessenger.of(context).showSnackBar(
