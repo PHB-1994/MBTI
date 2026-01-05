@@ -182,6 +182,7 @@ class _HomeScreenState extends State<HomeScreen> {
              상태 관리나 디자인을 위해서 SizeBox 로 감싼 다음 버튼을 작성하는 것도 방법
              */
                 SizedBox(height: 20),
+
                 SizedBox(
                   width: 300,
                   height:50,
@@ -204,6 +205,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Text('이전 결과 보기')),
                 ),
                 SizedBox(height: 10),
+
                 SizedBox(
                   width: 300,
                   height: 50,
@@ -211,11 +213,23 @@ class _HomeScreenState extends State<HomeScreen> {
                       onPressed: () => context.go('/types'),
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.green[300],
-                          foregroundColor: Colors.black87
+                          foregroundColor: Colors.white
                       ),
                       child: Text("MBTI 유형 보기")),
-                )
+                ),
+                SizedBox(height: 10),
 
+                SizedBox(
+                  width: 300,
+                  height: 50,
+                  child: ElevatedButton(
+                      onPressed: () => context.go('/signup'),
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.green[300],
+                          foregroundColor: Colors.white
+                      ),
+                      child: Text("회원가입하기")),
+                ),
               ],
             ),
           ),

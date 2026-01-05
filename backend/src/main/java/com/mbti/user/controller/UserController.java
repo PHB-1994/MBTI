@@ -1,6 +1,8 @@
 package com.mbti.user.controller;
 
+import com.mbti.user.model.dto.ErrorResponse;
 import com.mbti.user.model.dto.LoginRequest;
+import com.mbti.user.model.dto.SignupRequest;
 import com.mbti.user.model.dto.User;
 import com.mbti.user.model.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -109,6 +111,42 @@ public class UserController {
         } catch (Exception e) {
             log.error("Error deleting user with id: {}", id, e);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
+    /**
+     * 회원가입
+     * POST /api/users/signup
+     */
+    @PostMapping("/signup")
+    public ResponseEntity<?> signup(@RequestBody SignupRequest request) {
+        log.info("POST /api/users/signup - User: {}", request.getUserName());
+
+        try {
+            if (request.getUserName() == null || request.getUserName().trim().isEmpty()) {
+                log.warn("Empty username provided for signup");
+                ErrorResponse error = new ErrorResponse("사용자 이름은 필수입니다.");
+                return ResponseEntity.badRequest().body(error);
+            }
+
+            User user = userService.signup(request.getUserName().trim());
+
+            return ResponseEntity.status(HttpStatus.CREATED).body(user);
+
+        } catch (IllegalArgumentException e) {
+            log.warn("Signup failed: {}", e.getMessage());
+            ErrorResponse error = new ErrorResponse(e.getMessage(), request.getUserName());
+
+            if (e.getMessage().contains("이미 존재")) {
+                return ResponseEntity.status(HttpStatus.CONFLICT).body(error);
+            } else {
+                return ResponseEntity.badRequest().body(error);
+            }
+
+        } catch (Exception e) {
+            log.error("Error during signup", e);
+            ErrorResponse error = new ErrorResponse("서버 오류가 발생했습니다.");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
         }
     }
 }

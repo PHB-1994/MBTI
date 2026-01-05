@@ -43,4 +43,10 @@
         DELETE FROM users WHERE id = #{id}
     </delete>
 
+    <!-- 회원가입 -->
+    <insert id="insertUser" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO users(user_name, created_at)
+        VALUES(#{userName}, current_timestamp)
+    </insert>
+
 </mapper>

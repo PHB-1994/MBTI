@@ -24,7 +24,7 @@ class ApiService {
   // 로그인
   static Future<User> login(String userName) async {
     final res = await http.post(
-      Uri.parse('$url${ApiConstants.userUrl}'),
+      Uri.parse('$url${ApiConstants.login}'),
       headers: {'Content-type':'application/json'},
       body: json.encode({'userName': userName})
     );

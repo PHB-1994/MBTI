@@ -245,3 +245,5 @@
 2026-01-02 13:14:17.870  INFO 15356 --- [http-nio-8080-exec-8] com.mbti.common.aop.LoggingAspect        : Running Time : 66ms
 2026-01-02 13:14:17.870  INFO 15356 --- [http-nio-8080-exec-8] com.mbti.common.aop.LoggingAspect        : ===================================================================================
 2026-01-02 14:22:13.740  WARN 15356 --- [MyHikariCP housekeeper] com.zaxxer.hikari.pool.HikariPool        : MyHikariCP - Thread starvation or clock leap detected (housekeeper delta=32m39s164ms91µs800ns).
+2026-01-02 15:15:15.558  INFO 15356 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : MyHikariCP - Shutdown initiated...
+2026-01-02 15:15:15.564  INFO 15356 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : MyHikariCP - Shutdown completed.

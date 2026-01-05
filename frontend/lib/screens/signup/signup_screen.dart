@@ -83,11 +83,11 @@ class _SignupScreenState extends State<SignupScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(Icons.person_add, size: 100, color: Colors.green),
-                SizedBox(height: 30),
+                Icon(Icons.person_add, size: 50, color: Colors.green),
+                SizedBox(height: 50),
 
                 Text(
-                  'MBTI 검사를 위해\n회원가입해주세요.',
+                  'MBTI 검사 데이터 저장을 위해\n회원가입해주세요.',
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold
@@ -96,19 +96,22 @@ class _SignupScreenState extends State<SignupScreen> {
                 ),
                 SizedBox(height: 40),
 
+                // 테두리를 만들 때 Container SizedBox
                 SizedBox(
                   width: 300,
                   child: TextField(
                     controller: _nameController,
-                    enabled: !_isLoading,
+                    enabled: !_isLoading, // 로딩 중에는 작성 불가 활성화 : true, false disabled 효과 적용
                     decoration: InputDecoration(
                       labelText: '이름',
                       hintText: '이름을 입력해주세요.',
                       border: OutlineInputBorder(),
+                      errorText: _errorText,
                       prefixIcon: Icon(Icons.person_outline)
                     ),
                     onChanged: (value) {
                       setState(() {
+                        // 정규식으로 입력값 검증
                         if(RegExp(r'[0-9]').hasMatch(value)){
                           _errorText = '숫자는 입력할 수 없습니다.';
                         } else if(RegExp(r'[^가-힣a-zA-Z]').hasMatch(value)){
@@ -126,21 +129,26 @@ class _SignupScreenState extends State<SignupScreen> {
                   width: 300,
                   height: 50,
                   child: ElevatedButton(
-                      onPressed: _isLoading ? null : _handleSignup,
+                      onPressed: _isLoading ? null : _handleSignup, // 로딩 중에는 버튼 비활성화 처리하여 여러번 클릭과 같은 효과 미리 방지
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.green,
                         foregroundColor: Colors.white,
                         disabledBackgroundColor: Colors.grey[400]
                       ),
-                      child: _isLoading ? CircularProgressIndicator(color: Colors.white)
-                          : Text(
+                      child: _isLoading ?
+                    SizedBox(
+                      width: 20,
+                      height: 20,
+                      child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2,),
+                    ) : Text(
                           '회원가입하기',
-                        style: TextStyle(fontSize: 16),
+                          style: TextStyle(fontSize: 16)
                       )
                   ),
                 ),
                 SizedBox(height: 20),
 
+                // 로그인 링크
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

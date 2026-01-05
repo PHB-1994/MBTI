@@ -78,4 +78,33 @@ public class UserServiceImpl implements UserService {
         log.info("Deleting user with id: {}", id);
         userMapper.delete(id);
     }
+
+    /**
+     * 회원가입
+     * @param userName 사용자 이름
+     * @return 생성된 사용자 정보
+     * @throws IllegalArgumentException 중복된 사용자명인 경우
+     */
+    @Override
+    public User signup(String userName) {
+        log.info("Signup attempt for user: {}", userName);
+
+        if(userName == null || userName.isEmpty()) {
+            log.warn("Empty username provided for signup");
+            throw new IllegalArgumentException("사용자 이름은 필수입니다.");
+        }
+
+        User existingUser = userMapper.selectByUserName(userName);
+        if (existingUser != null) {
+            log.warn("Username already exists: {}", userName);
+            throw new IllegalArgumentException("이미 존재하는 사용자입니다.");
+        }
+
+        User newUser = new User();
+        newUser.setUserName(userName);
+        userMapper.insertUser(newUser);
+        log.info("New user signed up: {} with id: {}", userName, newUser.getId());
+
+        return userMapper.selectById(newUser.getId());
+    }
 }
