@@ -1,10 +1,11 @@
 import 'dart:convert';
+import 'package:dio/dio.dart';
 import 'package:frontend/common/constants.dart';
 import 'package:frontend/models/answer_model.dart';
 import 'package:frontend/models/question_model.dart';
 import 'package:frontend/models/result_model.dart';
 import 'package:frontend/models/test_request_model.dart';
-import 'package:http/http.dart' as http;
+// import 'package:http/http.dart' as http;
 
 import '../models/mbti_type_model.dart';
 import '../models/user_model.dart';
@@ -15,18 +16,186 @@ import '../models/user_model.dart';
   * const = 어플 전체적으로 사용되는 상수 명칭
   * final = 특정 기능이나 특정 화면에서만 부분적으로 사용되는 상수 명칭
   * */
-// models 에 작성한 자료형 변수이름을 활용하여 데이터 타입 지정
+// models 에 작성한 자료형 변수이름을 활용하여 데이터 타입
+/*
+Dio 의 장점
+1. 자동으로 JSON 인코딩 / 디코딩 처리
+2. Interceptor 를 통한 로깅, 인증 토큰 추가 가능
+3. 백엔드 통신 타임아웃 설정이 더 간편
+4. FormData, 파일 업로드 지원이 편리
+5. 에러 처리가 더 구조화 되어 있음
+6. queryParameters 를 쉽게 추가 가능
+
+http 와 차이점 :
+- http : json.encode() / json.decode() 필요
+-  dio : 자동으로 처리, response.data 로 바로 접근
+
+- http : Uri.parse() 필요
+-  dio : baseUrl 설정 후 상대 경로만 작성
+
+- http : 에러 처리가 statusCode 기반
+-  dio : DIoException 으로 다양한 에러 타입 처리 가능
+ */
 class ApiService {
+  static const String url = ApiConstants.baseUrl;
+
+  // Dio 인스턴스 생성
+  static final Dio _dio = Dio(
+    BaseOptions(
+      baseUrl: url,
+      connectTimeout : const Duration(seconds: 5),
+      receiveTimeout : const Duration(seconds: 3),
+      headers:{
+        'Content-Type':'application/json'
+      },
+    ),
+  );
+
+  static Future<User> login(String userName) async {
+    final res = await _dio.post(
+      ApiConstants.login,
+      data: {'userName': userName}
+    );
+
+    if(res.statusCode == 200){
+      return User.fromJson(res.data);
+    } else {
+      throw Exception(ErrorMessage.submitFailed);
+    }
+  }
+
+  static Future<List<Question>> getQuestions() async {
+    final res = await _dio.get('/questions');
+
+    if(res.statusCode == 200){
+      List<dynamic> jsonList = res.data;
+      return jsonList.map((json) => Question.fromJson(json)).toList();
+
+    } else{
+      throw Exception(ErrorMessage.loadFailed);
+    }
+  }
+
+  static Future<Result> submitTest(String userName, Map<int, String> answers) async {
+    List<TestAnswer> answerList = answers.entries.map((en) {
+      return TestAnswer(questionId: en.key, selectedOption: en.value);
+    }).toList();
+
+    TestRequest request = TestRequest(userName: userName, answers: answerList);
+
+    final res = await _dio.post(
+      ApiConstants.submit,
+      data: request.toJson(),
+    );
+
+    if(res.statusCode == 200) {
+      return Result.fromJson(res.data);
+
+    } else {
+      throw Exception(ErrorMessage.submitFailed);
+    }
+  }
+
+  static Future<List<Result>> getResultsByUserName(String userName) async {
+    final res = await _dio.get(
+      ApiConstants.results,
+      queryParameters: {'userName':userName},
+    );
+
+    if(res.statusCode == 200){
+      List<dynamic> jsonList = res.data;
+      return jsonList.map((json) => Result.fromJson(json)).toList();
+    } else {
+      throw Exception(ErrorMessage.loadFailed);
+    }
+  }
+
+  static Future<List<MbtiType>> getAllMbtiTypes() async {
+    final res = await _dio.get(
+      ApiConstants.types,
+    );
+
+    if(res.statusCode == 200) {
+      List<dynamic> jsonList = res.data;
+      return jsonList.map((json) => MbtiType.fromJson(json)).toList();
+    } else {
+      throw Exception(ErrorMessage.loadFailed);
+    }
+  }
+
+  static Future<MbtiType> getMbtiTypeByCode(String typeCode) async {
+    final res = await _dio.get('${ApiConstants.types}$typeCode');
+
+    if(res.statusCode == 200) {
+      Map<String, dynamic> jsonData = res.data;
+      return MbtiType.fromJson(jsonData);
+    } else {
+      throw Exception(ErrorMessage.loadFailed);
+    }
+  }
+
+  // ID 로 결과 조회
+  // GET /api/mbti/result/{id}
+  // method = getResultById(int id)
+  // http.get
+  // Map<String, dynamic>
+  static Future<Result> getResultById(int id) async {
+    final res = await _dio.get(
+        '${ApiConstants.result}/$id');
+    
+    if(res.statusCode == 200){
+      Map<String, dynamic> jsonData = res.data;
+      return Result.fromJson(jsonData);
+    } else {
+      throw Exception(ErrorMessage.loadFailed);
+    }
+  }
+
+  static Future<void> deleteResult(int id) async {
+    final res = await _dio.delete(
+        '${ApiConstants.result}/$id');
+    
+    if(res.statusCode != 200) {
+      throw Exception("삭제에 실패했습니다.");
+    }
+  }
+
+  static Future<Result> healthCheck() async {
+    final res = await _dio.get(
+        ApiConstants.health);
+
+    if(res.statusCode == 200) {
+      Map<String, dynamic> jsonData = res.data;
+      return Result.fromJson(jsonData);
+    } else {
+      throw Exception(ErrorMessage.serverError);
+    }
+  }
+
+/*
+final               res = http.Response 라는 타입으로 자동 지정
+final http.Response res =
+
+
+final              res = 타입 명식을 하지 않아 Dart 에서 자동으로 반환 타입 파악
+final String       res = 타입을 명확히 지정
+final int          res = 타입을 명확히 지정
+
+final a = 1; // int 로 자동으로 타입 확인
+개발자가 만든 자료형이나 클래스형 자료형은 필히 타입을 작성해주는 것이 좋다.
+ */
+}
+
+/*
+class HttpApiService {
   // 상태 관리가 된 url 주소 호출
   static const String url = ApiConstants.baseUrl;
 
-  // =================== 사용자 관련 API ======================
-  // 로그인
   static Future<User> login(String userName) async {
     final res = await http.post(
-      Uri.parse('$url${ApiConstants.login}'),
-      headers: {'Content-type':'application/json'},
-      body: json.encode({'userName': userName})
+        Uri.parse('$url${ApiConstants.login}'),
+        headers: {'Content-type':'application/json'},
+        body: json.encode({'userName': userName})
     );
 
     if(res.statusCode == 200){
@@ -120,7 +289,7 @@ class ApiService {
   // Map<String, dynamic>
   static Future<Result> getResultById(int id) async {
     final res = await http.get(Uri.parse('$url${ApiConstants.result}/$id'));
-    
+
     if(res.statusCode == 200){
       Map<String, dynamic> jsonData = json.decode(res.body);
       return Result.fromJson(jsonData);
@@ -137,7 +306,7 @@ class ApiService {
   // Future 예상결과로 백엔드에서 진행한 결과에 대한 return 없이 기능만 수행할 것
   static Future<void> deleteResult(int id) async {
     final res = await http.delete(Uri.parse('$url${ApiConstants.result}/$id'));
-    
+
     if(res.statusCode != 200) {
       throw Exception("삭제에 실패했습니다.");
     }
@@ -326,27 +495,6 @@ class ModelsApiService {
   }
 }
 
-/*
-Map<String, dynamic> jsonData = json.decode(res.body);
-String = 키 명칭들은 문자열로 확정!
-  Map<String   ,  dynamic >
-  "id"              1               숫자
-  "userName"     "강감찬"           문자열
-  "resultType"    "ENFP"            문자열
-  "isActive"       true             불리언
-  "createdAt"      null             null
-  "scores"        [2, 3, 1, ...]    List
-
-dynamic 대신 Object 사용하면 안되나요? ^^ 안돼요.
-
-Object 에는 null 불가능
-            └──────── Dart Object 타입은 null 불가 ~컴파일에서는 연산 불가 2.1.2 부터 null 사용 금지이고 dynamic 써라
-            └──────── Java Object 타입은 null 가능 ~
-
-dynamic 에는 null 가능
-     └──────── 컴파일에서는 우선 타입이 무었인지 ???? 상태로 일단 OK
-            └──────── 실행하면서 타입이 맞지 않으면 에러 발생
- */
 class DynamicApiService {
 
   static const String url = 'http://localhost:8080/api/mbti';
@@ -392,3 +540,26 @@ class DynamicApiService {
     }
   }
 }
+*/
+
+/*
+Map<String, dynamic> jsonData = json.decode(res.body);
+String = 키 명칭들은 문자열로 확정!
+  Map<String   ,  dynamic >
+  "id"              1               숫자
+  "userName"     "강감찬"           문자열
+  "resultType"    "ENFP"            문자열
+  "isActive"       true             불리언
+  "createdAt"      null             null
+  "scores"        [2, 3, 1, ...]    List
+
+dynamic 대신 Object 사용하면 안되나요? ^^ 안돼요.
+
+Object 에는 null 불가능
+            └──────── Dart Object 타입은 null 불가 ~컴파일에서는 연산 불가 2.1.2 부터 null 사용 금지이고 dynamic 써라
+            └──────── Java Object 타입은 null 가능 ~
+
+dynamic 에는 null 가능
+     └──────── 컴파일에서는 우선 타입이 무었인지 ???? 상태로 일단 OK
+            └──────── 실행하면서 타입이 맞지 않으면 에러 발생
+ */

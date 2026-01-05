@@ -46,7 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return true;
   }
 
-  Future<void> handleLogin() async {
+  Future<void> _handleLogin() async {
     if (!_validateName()) return;
 
     setState(() {
@@ -77,14 +77,22 @@ class _LoginScreenState extends State<LoginScreen> {
             duration: Duration(seconds: 2),
           ),
         );
+        // 로그인 후 이동하고자 하는 화면 이동
+        context.go("/");
       }
     } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('로그인에 실패했습니다.')
-        )
-      );
-      // 로그인 후 이동하고자 하는 화면 이동
-      context.go("/");
+      if (mounted) {
+        setState(() {
+          _isLoading = false;
+        });
+
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('로그인에 실패했습니다.'),
+            duration: Duration(seconds: 2),
+          ),
+        );
+      }
     }
   }
 
@@ -146,10 +154,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 50,
                   child: ElevatedButton(
                     onPressed: () {
+                      _isLoading ? null : _handleLogin;
+                      /*
                       if (_validateName()) {
                         String name = _nameController.text.trim();
                         context.go('/test', extra: name);
                       }
+
+                       */
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blue,
@@ -163,7 +175,18 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                   ),
+
                 ),
+                SizedBox(height: 20),
+
+                Row(
+                  children: [
+                    Text('계정이 없으신가요?'),
+                    TextButton(
+                        onPressed: () => context.go('/signup'),
+                        child: Text('회원가입하기'))
+                  ],
+                )
               ],
             ),
           ),

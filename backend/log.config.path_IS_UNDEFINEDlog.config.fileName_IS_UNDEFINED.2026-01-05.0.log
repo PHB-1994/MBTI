@@ -1,0 +1,115 @@
+2026-01-05 09:34:54.738  INFO 4416 --- [restartedMain] com.mbti.BackendApplication              : Starting BackendApplication using Java 21.0.8 with PID 4416 (D:\MBTI\backend\build\classes\java\main started by TJ in D:\MBTI\backend)
+2026-01-05 09:34:54.740  INFO 4416 --- [restartedMain] com.mbti.BackendApplication              : No active profile set, falling back to 1 default profile: "default"
+2026-01-05 09:34:54.795  INFO 4416 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-05 09:34:54.796  INFO 4416 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-05 09:34:56.619  INFO 4416 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-01-05 09:34:56.633  INFO 4416 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-05 09:34:56.633  INFO 4416 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2026-01-05 09:34:56.681  INFO 4416 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-01-05 09:34:56.681  INFO 4416 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1884 ms
+2026-01-05 09:34:58.161  INFO 4416 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-01-05 09:34:58.198  INFO 4416 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2026-01-05 09:34:58.206  INFO 4416 --- [restartedMain] com.mbti.BackendApplication              : Started BackendApplication in 4.201 seconds (process running for 5.212)
+2026-01-05 09:36:09.729  INFO 4416 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-05 09:36:09.729  INFO 4416 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-05 09:36:09.731  INFO 4416 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-01-05 10:15:04.654  INFO 4416 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-01-05 10:15:04.751  INFO 4416 --- [restartedMain] com.mbti.BackendApplication              : Starting BackendApplication using Java 21.0.8 with PID 4416 (D:\MBTI\backend\build\classes\java\main started by TJ in D:\MBTI\backend)
+2026-01-05 10:15:04.751  INFO 4416 --- [restartedMain] com.mbti.BackendApplication              : No active profile set, falling back to 1 default profile: "default"
+2026-01-05 10:15:05.338  INFO 4416 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-01-05 10:15:05.343  INFO 4416 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-05 10:15:05.344  INFO 4416 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2026-01-05 10:15:05.378  INFO 4416 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-01-05 10:15:05.379  INFO 4416 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 626 ms
+2026-01-05 10:15:06.276  INFO 4416 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-01-05 10:15:06.290  INFO 4416 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2026-01-05 10:15:06.293  INFO 4416 --- [restartedMain] com.mbti.BackendApplication              : Started BackendApplication in 1.579 seconds (process running for 2413.733)
+2026-01-05 10:15:06.295  INFO 4416 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-01-05 10:15:10.832  INFO 4416 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-01-05 10:15:10.911  INFO 4416 --- [restartedMain] com.mbti.BackendApplication              : Starting BackendApplication using Java 21.0.8 with PID 4416 (D:\MBTI\backend\build\classes\java\main started by TJ in D:\MBTI\backend)
+2026-01-05 10:15:10.911  INFO 4416 --- [restartedMain] com.mbti.BackendApplication              : No active profile set, falling back to 1 default profile: "default"
+2026-01-05 10:15:11.264  INFO 4416 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-01-05 10:15:11.265  INFO 4416 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-05 10:15:11.265  INFO 4416 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2026-01-05 10:15:11.282  INFO 4416 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-01-05 10:15:11.282  INFO 4416 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 369 ms
+2026-01-05 10:15:11.829  INFO 4416 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-01-05 10:15:11.843  INFO 4416 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2026-01-05 10:15:11.848  INFO 4416 --- [restartedMain] com.mbti.BackendApplication              : Started BackendApplication in 0.967 seconds (process running for 2419.289)
+2026-01-05 10:15:11.849  INFO 4416 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-01-05 10:21:26.077  INFO 2808 --- [restartedMain] com.mbti.BackendApplication              : Starting BackendApplication using Java 21.0.8 with PID 2808 (D:\MBTI\backend\build\classes\java\main started by TJ in D:\MBTI\backend)
+2026-01-05 10:21:26.079  INFO 2808 --- [restartedMain] com.mbti.BackendApplication              : No active profile set, falling back to 1 default profile: "default"
+2026-01-05 10:21:26.124  INFO 2808 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-05 10:21:26.124  INFO 2808 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-05 10:21:27.926  INFO 2808 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-01-05 10:21:27.937  INFO 2808 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-05 10:21:27.937  INFO 2808 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2026-01-05 10:21:27.981  INFO 2808 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-01-05 10:21:27.982  INFO 2808 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1857 ms
+2026-01-05 10:21:29.095  INFO 2808 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-01-05 10:21:29.130  INFO 2808 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2026-01-05 10:21:29.139  INFO 2808 --- [restartedMain] com.mbti.BackendApplication              : Started BackendApplication in 3.588 seconds (process running for 4.476)
+2026-01-05 10:21:43.855  INFO 2808 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-05 10:21:43.856  INFO 2808 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-05 10:21:43.857  INFO 2808 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-01-05 10:25:43.035  INFO 2808 --- [http-nio-8080-exec-5] com.mbti.common.aop.LoggingAspect        : [MbtiController.getAllQuestions()] 요청 / ip : 0:0:0:0:0:0:0:1
+2026-01-05 10:25:43.035  INFO 2808 --- [http-nio-8080-exec-5] c.mbti.mbti.controller.MbtiController    : GET /api/mbti/questions - Fetching all questions
+2026-01-05 10:25:43.035  INFO 2808 --- [http-nio-8080-exec-5] com.mbti.common.aop.LoggingAspect        : ========== MbtiServiceImpl.getAllQuestions() 서비스 호출 ==========
+2026-01-05 10:25:43.039  INFO 2808 --- [http-nio-8080-exec-5] com.mbti.common.aop.LoggingAspect        : Parameter : []
+2026-01-05 10:25:43.040  INFO 2808 --- [http-nio-8080-exec-5] c.m.mbti.model.service.MbtiServiceImpl   : Fetching all questions
+2026-01-05 10:25:43.060  INFO 2808 --- [http-nio-8080-exec-5] com.zaxxer.hikari.HikariDataSource       : MyHikariCP - Starting...
+2026-01-05 10:25:43.311  INFO 2808 --- [http-nio-8080-exec-5] com.zaxxer.hikari.pool.HikariPool        : MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@7af25af8
+2026-01-05 10:25:43.312  INFO 2808 --- [http-nio-8080-exec-5] com.zaxxer.hikari.HikariDataSource       : MyHikariCP - Start completed.
+2026-01-05 10:25:43.365  INFO 2808 --- [http-nio-8080-exec-5] com.mbti.common.aop.LoggingAspect        : Running Time : 325ms
+2026-01-05 10:25:43.365  INFO 2808 --- [http-nio-8080-exec-5] com.mbti.common.aop.LoggingAspect        : ===================================================================================
+2026-01-05 10:26:01.477  INFO 2808 --- [http-nio-8080-exec-7] com.mbti.common.aop.LoggingAspect        : [MbtiController.submitTest()] 요청 / ip : 0:0:0:0:0:0:0:1
+2026-01-05 10:26:01.478  INFO 2808 --- [http-nio-8080-exec-7] c.mbti.mbti.controller.MbtiController    : POST /api/mbti/submit - Submitting test for user: 김철수
+2026-01-05 10:26:01.483  INFO 2808 --- [http-nio-8080-exec-7] com.mbti.common.aop.LoggingAspect        : ========== MbtiServiceImpl.submitTest() 서비스 호출 ==========
+2026-01-05 10:26:01.483  INFO 2808 --- [http-nio-8080-exec-7] com.mbti.common.aop.LoggingAspect        : Parameter : [TestRequest(userName=김철수, answers=[TestAnswer(questionId=1, selectedOption=A), TestAnswer(questionId=2, selectedOption=A), TestAnswer(questionId=3, selectedOption=A), TestAnswer(questionId=4, selectedOption=A), TestAnswer(questionId=5, selectedOption=B), TestAnswer(questionId=6, selectedOption=B), TestAnswer(questionId=7, selectedOption=B), TestAnswer(questionId=8, selectedOption=A), TestAnswer(questionId=9, selectedOption=A), TestAnswer(questionId=10, selectedOption=B), TestAnswer(questionId=11, selectedOption=B), TestAnswer(questionId=12, selectedOption=A)])]
+2026-01-05 10:26:01.488  INFO 2808 --- [http-nio-8080-exec-7] c.m.mbti.model.service.MbtiServiceImpl   : Submitting test for user: 김철수
+2026-01-05 10:26:01.517  INFO 2808 --- [http-nio-8080-exec-7] c.m.mbti.model.service.MbtiServiceImpl   : Calculated MBTI type: ENTP
+2026-01-05 10:26:01.555  INFO 2808 --- [http-nio-8080-exec-7] c.m.mbti.model.service.MbtiServiceImpl   : Saved result with id: 20
+2026-01-05 10:26:01.593  INFO 2808 --- [http-nio-8080-exec-7] c.m.mbti.model.service.MbtiServiceImpl   : Saved 12 answers
+2026-01-05 10:26:01.593  INFO 2808 --- [http-nio-8080-exec-7] c.m.mbti.model.service.MbtiServiceImpl   : Fetching result with id: 20
+2026-01-05 10:26:01.603  INFO 2808 --- [http-nio-8080-exec-7] com.mbti.common.aop.LoggingAspect        : Running Time : 120ms
+2026-01-05 10:26:01.603  INFO 2808 --- [http-nio-8080-exec-7] com.mbti.common.aop.LoggingAspect        : ===================================================================================
+2026-01-05 10:27:05.090  INFO 2808 --- [http-nio-8080-exec-9] com.mbti.common.aop.LoggingAspect        : [MbtiController.getAllQuestions()] 요청 / ip : 0:0:0:0:0:0:0:1
+2026-01-05 10:27:05.091  INFO 2808 --- [http-nio-8080-exec-9] c.mbti.mbti.controller.MbtiController    : GET /api/mbti/questions - Fetching all questions
+2026-01-05 10:27:05.091  INFO 2808 --- [http-nio-8080-exec-9] com.mbti.common.aop.LoggingAspect        : ========== MbtiServiceImpl.getAllQuestions() 서비스 호출 ==========
+2026-01-05 10:27:05.091  INFO 2808 --- [http-nio-8080-exec-9] com.mbti.common.aop.LoggingAspect        : Parameter : []
+2026-01-05 10:27:05.092  INFO 2808 --- [http-nio-8080-exec-9] c.m.mbti.model.service.MbtiServiceImpl   : Fetching all questions
+2026-01-05 10:27:05.092  INFO 2808 --- [http-nio-8080-exec-9] com.mbti.common.aop.LoggingAspect        : Running Time : 0ms
+2026-01-05 10:27:05.092  INFO 2808 --- [http-nio-8080-exec-9] com.mbti.common.aop.LoggingAspect        : ===================================================================================
+2026-01-05 10:28:06.626  INFO 2808 --- [http-nio-8080-exec-1] com.mbti.common.aop.LoggingAspect        : [MbtiController.getResultsByUserName()] 요청 / ip : 0:0:0:0:0:0:0:1
+2026-01-05 10:28:06.626  INFO 2808 --- [http-nio-8080-exec-1] c.mbti.mbti.controller.MbtiController    : GET /api/mbti/results - Fetching results for user: 김철수
+2026-01-05 10:28:06.627  INFO 2808 --- [http-nio-8080-exec-1] com.mbti.common.aop.LoggingAspect        : ========== MbtiServiceImpl.getResultsByUserName() 서비스 호출 ==========
+2026-01-05 10:28:06.627  INFO 2808 --- [http-nio-8080-exec-1] com.mbti.common.aop.LoggingAspect        : Parameter : [김철수]
+2026-01-05 10:28:06.627  INFO 2808 --- [http-nio-8080-exec-1] c.m.mbti.model.service.MbtiServiceImpl   : Fetching results for user: 김철수
+2026-01-05 10:28:06.631  INFO 2808 --- [http-nio-8080-exec-1] com.mbti.common.aop.LoggingAspect        : Running Time : 4ms
+2026-01-05 10:28:06.631  INFO 2808 --- [http-nio-8080-exec-1] com.mbti.common.aop.LoggingAspect        : ===================================================================================
+2026-01-05 10:31:29.885  INFO 2808 --- [http-nio-8080-exec-3] com.mbti.common.aop.LoggingAspect        : [MbtiController.getAllQuestions()] 요청 / ip : 0:0:0:0:0:0:0:1
+2026-01-05 10:31:29.887  INFO 2808 --- [http-nio-8080-exec-3] c.mbti.mbti.controller.MbtiController    : GET /api/mbti/questions - Fetching all questions
+2026-01-05 10:31:29.887  INFO 2808 --- [http-nio-8080-exec-3] com.mbti.common.aop.LoggingAspect        : ========== MbtiServiceImpl.getAllQuestions() 서비스 호출 ==========
+2026-01-05 10:31:29.887  INFO 2808 --- [http-nio-8080-exec-3] com.mbti.common.aop.LoggingAspect        : Parameter : []
+2026-01-05 10:31:29.888  INFO 2808 --- [http-nio-8080-exec-3] c.m.mbti.model.service.MbtiServiceImpl   : Fetching all questions
+2026-01-05 10:31:29.892  INFO 2808 --- [http-nio-8080-exec-3] com.mbti.common.aop.LoggingAspect        : Running Time : 4ms
+2026-01-05 10:31:29.893  INFO 2808 --- [http-nio-8080-exec-3] com.mbti.common.aop.LoggingAspect        : ===================================================================================
+2026-01-05 10:31:32.782  INFO 2808 --- [http-nio-8080-exec-4] com.mbti.common.aop.LoggingAspect        : [MbtiController.submitTest()] 요청 / ip : 0:0:0:0:0:0:0:1
+2026-01-05 10:31:32.782  INFO 2808 --- [http-nio-8080-exec-4] c.mbti.mbti.controller.MbtiController    : POST /api/mbti/submit - Submitting test for user: 김철수
+2026-01-05 10:31:32.783  INFO 2808 --- [http-nio-8080-exec-4] com.mbti.common.aop.LoggingAspect        : ========== MbtiServiceImpl.submitTest() 서비스 호출 ==========
+2026-01-05 10:31:32.783  INFO 2808 --- [http-nio-8080-exec-4] com.mbti.common.aop.LoggingAspect        : Parameter : [TestRequest(userName=김철수, answers=[TestAnswer(questionId=1, selectedOption=A), TestAnswer(questionId=2, selectedOption=A), TestAnswer(questionId=3, selectedOption=A), TestAnswer(questionId=4, selectedOption=A), TestAnswer(questionId=5, selectedOption=A), TestAnswer(questionId=6, selectedOption=A), TestAnswer(questionId=7, selectedOption=A), TestAnswer(questionId=8, selectedOption=A), TestAnswer(questionId=9, selectedOption=A), TestAnswer(questionId=10, selectedOption=A), TestAnswer(questionId=11, selectedOption=A), TestAnswer(questionId=12, selectedOption=A)])]
+2026-01-05 10:31:32.783  INFO 2808 --- [http-nio-8080-exec-4] c.m.mbti.model.service.MbtiServiceImpl   : Submitting test for user: 김철수
+2026-01-05 10:31:32.791  INFO 2808 --- [http-nio-8080-exec-4] c.m.mbti.model.service.MbtiServiceImpl   : Calculated MBTI type: ESTJ
+2026-01-05 10:31:32.792  INFO 2808 --- [http-nio-8080-exec-4] c.m.mbti.model.service.MbtiServiceImpl   : Saved result with id: 21
+2026-01-05 10:31:32.803  INFO 2808 --- [http-nio-8080-exec-4] c.m.mbti.model.service.MbtiServiceImpl   : Saved 12 answers
+2026-01-05 10:31:32.803  INFO 2808 --- [http-nio-8080-exec-4] c.m.mbti.model.service.MbtiServiceImpl   : Fetching result with id: 21
+2026-01-05 10:31:32.805  INFO 2808 --- [http-nio-8080-exec-4] com.mbti.common.aop.LoggingAspect        : Running Time : 22ms
+2026-01-05 10:31:32.805  INFO 2808 --- [http-nio-8080-exec-4] com.mbti.common.aop.LoggingAspect        : ===================================================================================
+2026-01-05 10:31:38.875  INFO 2808 --- [http-nio-8080-exec-5] com.mbti.common.aop.LoggingAspect        : [MbtiController.getAllQuestions()] 요청 / ip : 0:0:0:0:0:0:0:1
+2026-01-05 10:31:38.876  INFO 2808 --- [http-nio-8080-exec-5] c.mbti.mbti.controller.MbtiController    : GET /api/mbti/questions - Fetching all questions
+2026-01-05 10:31:38.876  INFO 2808 --- [http-nio-8080-exec-5] com.mbti.common.aop.LoggingAspect        : ========== MbtiServiceImpl.getAllQuestions() 서비스 호출 ==========
+2026-01-05 10:31:38.876  INFO 2808 --- [http-nio-8080-exec-5] com.mbti.common.aop.LoggingAspect        : Parameter : []
+2026-01-05 10:31:38.876  INFO 2808 --- [http-nio-8080-exec-5] c.m.mbti.model.service.MbtiServiceImpl   : Fetching all questions
+2026-01-05 10:31:38.878  INFO 2808 --- [http-nio-8080-exec-5] com.mbti.common.aop.LoggingAspect        : Running Time : 2ms
+2026-01-05 10:31:38.879  INFO 2808 --- [http-nio-8080-exec-5] com.mbti.common.aop.LoggingAspect        : ===================================================================================
+2026-01-05 14:10:58.172  WARN 2808 --- [MyHikariCP housekeeper] com.zaxxer.hikari.pool.HikariPool        : MyHikariCP - Thread starvation or clock leap detected (housekeeper delta=21m12s26ms827µs800ns).

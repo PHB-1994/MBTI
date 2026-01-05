@@ -92,6 +92,7 @@ class _TestScreenState extends State<TestScreen> {
               '${widget.userName}님은 ${result['resultType']} 입니다.'
             ),
             actions: [
+
               TextButton(
                   onPressed: () => context.go("/"),
                   child: Text('처음으로')
