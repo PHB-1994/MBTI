@@ -44,7 +44,8 @@ class ApiConstants {
   static const String types = '$mbtiUrl/types';
   static const String health = '$mbtiUrl/health';
   static const String questions = '$mbtiUrl/questions';
-  static const String login = '$mbtiUrl/login';
+  static const String login = '$userUrl/login';
+  static const String signup = '$userUrl/signup';
 }
 
 class AppConstants {

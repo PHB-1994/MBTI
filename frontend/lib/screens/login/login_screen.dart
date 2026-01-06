@@ -80,6 +80,7 @@ class _LoginScreenState extends State<LoginScreen> {
         // 로그인 후 이동하고자 하는 화면 이동
         context.go("/");
       }
+
     } catch (e) {
       if (mounted) {
         setState(() {
@@ -154,7 +155,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 50,
                   child: ElevatedButton(
                     onPressed: () {
-                      _isLoading ? null : _handleLogin;
+                      _isLoading ? null : _handleLogin();
                       /*
                       if (_validateName()) {
                         String name = _nameController.text.trim();

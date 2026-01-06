@@ -10,8 +10,7 @@ public interface UserMapper {
     List<User> selectAll();
     User selectById(int id);
     User selectByUserName(String userName);
-    User insert(User user);
-    User updateLastLogin(int id);
+    int updateLastLogin(int id);
     void delete(int id);
 
     int insertUser(User user);

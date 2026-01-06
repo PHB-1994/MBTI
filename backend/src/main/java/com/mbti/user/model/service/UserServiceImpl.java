@@ -31,14 +31,8 @@ public class UserServiceImpl implements UserService {
             userMapper.updateLastLogin(existingUser.getId());
             log.info("Existing user logged in: {}", userName);
             return userMapper.selectById(existingUser.getId());
-        } else {
-            // 신규 사용자 - 등록
-            User newUser = new User();
-            newUser.setUserName(userName);
-            userMapper.insert(newUser);
-            log.info("New user registered: {}", userName);
-            return userMapper.selectById(newUser.getId());
         }
+        return null;
     }
 
 

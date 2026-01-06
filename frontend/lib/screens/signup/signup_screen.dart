@@ -58,7 +58,7 @@ class _SignupScreenState extends State<SignupScreen> {
   // 프론트엔드와 백엔드와 데이터를 주고받을 때 중간에 언젠가 문제가 발생할 수 있기 때문에
   // 백엔드와 주고받는 기능이다 선언과 같이 Future 를 작성해주자
   Future<void> _handleSignup() async {
-    if(_validateName()) return;
+    if(!_validateName()) return;
 
     setState(() {
       _isLoading = true;
@@ -66,11 +66,12 @@ class _SignupScreenState extends State<SignupScreen> {
 
     try{
       String name = _nameController.text.trim();
-      final user = await ApiService.login(name);
+      final user = await ApiService.signup(name);
 
       if(mounted) {
         // Provider 에 로그인 정보를
         await context.read<AuthProvider>().login(user);
+
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text('${user.userName}님, 회원가입이 완료되었습니다.'),
           backgroundColor: Colors.green,
@@ -161,11 +162,6 @@ class _SignupScreenState extends State<SignupScreen> {
                   height: 50,
                   child: ElevatedButton(
                       onPressed: _isLoading ? null : _handleSignup, // 로딩 중에는 버튼 비활성화 처리하여 여러번 클릭과 같은 효과 미리 방지
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.green,
-                        foregroundColor: Colors.white,
-                        disabledBackgroundColor: Colors.grey[400]
-                      ),
                       child: _isLoading ?
                     SizedBox(
                       width: 20,
