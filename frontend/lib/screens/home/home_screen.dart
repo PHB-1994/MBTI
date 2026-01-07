@@ -100,8 +100,11 @@ class _HomeScreenState extends State<HomeScreen> {
       return true; // 바로 통과 ~ 반환
     }
 
+
     // 게시트인 경우에만 _nameController = 소비자가 작성한 명칭이 들어 있는 공간에 접근
     String name = _nameController.text.trim();
+
+    print("name : " + name);
 
     // 1. 빈 값 체크
     if (name.isEmpty) {
@@ -201,7 +204,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     SizedBox(height: 40),
                     if (!isLoggedIn)
-                      GuestSection()
+                      GuestSection(
+                        abc : _nameController,
+                        eText : _errorText,
+                        onErrorChanged : (error) => setState(() => _errorText = error)
+                      )
                     else
                       UserSection(),
                     SizedBox(height: 20),
