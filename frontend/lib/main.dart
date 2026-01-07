@@ -21,31 +21,22 @@ final GoRouter _router = GoRouter(
   initialLocation: '/',
   routes: [
     GoRoute(path: '/', builder: (context, state) => const HomeScreen()),
-
     // 로그인 화면
     GoRoute(path: '/login', builder: (context, state) => const LoginScreen()),
-
     // 회원가입 화면
     GoRoute(path: '/signup', builder: (context, state) => const SignupScreen()),
-
     // 검사 화면
     GoRoute(
       path: '/test',
       builder: (context, state) {
-        final userName = state.extra as String; // 잠시 사용할 이름인데 문자열이에요~
+        final userName = state.extra as String;
 
-        /*
-            생성된 객체를 사용할 수는 있으나, 매개변수는 존재하지 않는 상태
-            단순히 화면만 보여주는 형태
-            const TestScreen({super.key});
-             */
         return TestScreen(userName: userName);
       },
     ),
     GoRoute(
       path: '/result',
       builder: (context, state) {
-        // final data = state.extra as Map<String, dynamic>;
         final result = state.extra as Result;
 
         return ResultScreen(result: result);
@@ -69,8 +60,6 @@ final GoRouter _router = GoRouter(
       path: '/history',
       builder: (context, state) {
         final userName = state.extra as String;
-        // return ResultDetailScreen(userName: state.extra as String);
-        //                        required   final userName
         return ResultDetailScreen(userName: userName);
       },
     ),

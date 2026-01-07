@@ -45,7 +45,25 @@ class _HomeScreenState extends State<HomeScreen> {
   3. 값을 가져와서 확인하거나 사용하기
   String name = _nameController.text;
    */
+  /*
+  TextField TextFormField 처럼 텍스트를 제어하고 관리하는 클래스
 
+  _nameController
+  변수명 앞에 _는 현재 파일에서만 사용 가능한 private 변수
+
+  사용 예시
+
+  TextField(controller : _nameController)
+  클라이언트는 필드 내부에 텍스트 작성
+
+  작성한 텍스트를 가져와서 사용하는 방법
+  String name = _controller.text;
+
+  _nameController 내부 텍스트를 변경하는 방법
+  _nameController.text = "홍길동"
+   */
+  final TextEditingController _nameController = TextEditingController();
+  String? _errorText; // 에러 메세지를 담을 변수 ? = 변수 공간에 null 값이 들어갈 수 있다.
 
   // 홈화면 시작하자마자 실행할 기능들 세팅
   // git init -> git 초기세팅 처럼 init 초기 세팅
@@ -60,14 +78,68 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
 
+  // 유효성 검사 함수
+  // 기능 중에 일부라도 문법상 문제가 생기면 기능 자체가 작동 중지
+  /*
+  * 로그인한 상태에서 검사 시작하기 버튼을 클릭했을 때
+  * _validateName() 기능이 _nameController.text 접근하여 클라이언트가 작성한 데이터좀 확인해볼까~~
+  *
+  * _nameController 이름은 개발자가 지정하는 변수 명칭일 뿐
+  * 소비자의 이름을 제어하기 위해 명칭을 controller 와 name 을 추가하여 생성
+  *
+  * 로그인한 상태에서는 GuestSection 이 렌더링 되지 않음
+  * _nameController 가 초기화 되지 않은 상태
+  * _nameController = null 도 아닌 undefined.text 로 오류 발생
+  *
+  * _nameController.text.trim()
+  * */
+  bool _validateName() {
 
+    // 로그인 한 경우에는 소비자가 input 창에 본인의 이름을 작성했는지 검증할 필요가 없으므로
+    if(context.read<AuthProvider>().isLoggedIn){
+      return true; // 바로 통과 ~ 반환
+    }
 
+    // 게시트인 경우에만 _nameController = 소비자가 작성한 명칭이 들어 있는 공간에 접근
+    String name = _nameController.text.trim();
+
+    // 1. 빈 값 체크
+    if (name.isEmpty) {
+      setState(() {
+        _errorText = '이름을 입력해주세요.';
+      });
+      return false;
+    }
+    // 2. 글자 수 체크 (2글자 미만)
+    if (name.length < 2) {
+      setState(() {
+        _errorText = '이름은 최소 2글자 이상이여야 합니다.';
+      });
+      return false;
+    }
+
+    // 3. 한글 영문 이외에 특수문자나 숫자 포함 체크 여부(정규식)
+    // 만약 숫자도 허용하려면 r'^[가-힣-a-zA-Z0-9]+$ 로 변경
+    // 만약 숫자도 허용하려면 r'^[가-힣a-zA-Z0-9]+$ - : 어디서부터 어디까지
+    // 가-힣 가에서부터 힣까지 힇에서 a까지는 잘못된 문법 정규식 동작 안함
+    if (!RegExp(r'^[가-힣a-zA-Z]+$').hasMatch(name)) {
+      setState(() {
+        _errorText = '한글 또는 영문만 입력 가능합니다.\n(특수문자, 숫자 불가)';
+      });
+      return false;
+    }
+
+    // 통과 시 에러 메세지 비움
+    setState(() {
+      _errorText = null;
+    });
+    return true;
+  }
 
   // UI 화면
   /*
   키보드를 화면에서 사용해야하는 경우
   화면이 가려지는 것을 방지하기 위해 스크롤 가능하게 처리
-
    */
   void _handleLogout() {
     showDialog(
@@ -101,6 +173,7 @@ class _HomeScreenState extends State<HomeScreen> {
       builder: (context, authProvider, child) {
         final isLoggedIn = authProvider.isLoggedIn;
         final userName = authProvider.user?.userName;
+
         return Scaffold(
           appBar: AppBar(
             title: Text("MBTI 유형 검사"),
@@ -131,8 +204,36 @@ class _HomeScreenState extends State<HomeScreen> {
                       GuestSection()
                     else
                       UserSection(),
-                    SizedBox(height: 10),
+                    SizedBox(height: 20),
+                    // if else 와 관계없이 누구나 검사를 시작하는 버튼을 클릭할 수 있어야 한다.
+                    // 과제 : 검사 시작하기 버튼은 게스트 모드, 유저 모드 관계없이 누구나 볼 수 있어야 함
+                    // 게스트는 유저 이름 입력하고 검사 시작할 수 있다.
+                    // 유저는 로그인한 유저 이름으로 검사 시작할 수 있다.
 
+                    /*
+                    The following JSNoSuchMethodError was thrown while handling a gesture:
+                    TypeError: Cannot read properties of undefined (reading 'text')
+                    When the exception was thrown, this was the stack:
+                    package:frontend/screens/home/home_screen.dart 38:40                              [_validateName]
+
+                     _nameController 문제 생김
+
+                     */
+                    SizedBox(
+                      width: 300,
+                      height: 50,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          if (_validateName()) {
+                            String name = _nameController.text.trim();
+                            context.go('/test', extra: name);
+                          }
+                        },
+                        child: Text('검사 시작하기', style: TextStyle(fontSize: 16)),
+                      ),
+                    ),
+                    // if else 와 관계없이 누구나 검사를 시작하는 버튼을 클릭할 수 있어야한다.
+                    SizedBox(height: 10),
                     SizedBox(
                       width: 300,
                       height: 50,
