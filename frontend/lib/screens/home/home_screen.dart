@@ -66,6 +66,8 @@ class _HomeScreenState extends State<HomeScreen> {
   final TextEditingController _nameController = TextEditingController();
   String? _errorText; // 에러 메세지를 담을 변수 ? = 변수 공간에 null 값이 들어갈 수 있다.
 
+  final NetworkService _networkService = NetworkService();
+
   // 홈화면 시작하자마자 실행할 기능들 세팅
   // git init -> git 초기세팅 처럼 init 초기 세팅
   // state 상태 변화
@@ -76,6 +78,19 @@ class _HomeScreenState extends State<HomeScreen> {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       context.read<AuthProvider>().loadSaveUser();
     });
+    _checkNetwork();
+  }
+
+  void _checkNetwork() async {
+    final status = await _networkService.checkStatus();
+
+    if(mounted && status.contains('x나 연결안되었다는 공통된 구문 포함되어 있다면')){
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(status), backgroundColor: Colors.orange,
+            duration: Duration(seconds: 3),
+          )
+      );
+    }
   }
 
 

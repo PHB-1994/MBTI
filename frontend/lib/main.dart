@@ -12,7 +12,6 @@ import 'package:frontend/screens/result/result_screen.dart';
 import 'package:frontend/screens/signup/signup_screen.dart';
 import 'package:frontend/screens/test/test_screen.dart';
 import 'package:frontend/screens/types/mbti_types_screen.dart';
-import 'package:frontend/services/network_service.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kakao_map_plugin/kakao_map_plugin.dart';
 import 'package:provider/provider.dart';
@@ -22,7 +21,7 @@ Future<void> main() async {
 
   // 환경별 .env 파일 로드
   // 개발 : .env.development
-  // 배포 : .env.production
+  // 배포 : .env.product
   // 로컬 : .env.local
   //      .env.load(파일이름 : "프로젝트에 존재하는 파일이름")
   await dotenv.load(fileName: ".env.development");
@@ -111,27 +110,7 @@ final GoRouter _router = GoRouter(
 // MyApp StatelessWidget -> StatefulWidget mounted ok
 // context -> 최상위에서는 사용하지 않음 -> HomeScreen 으로 이동하여 사용하는 것이 맞음
 class MyApp extends StatelessWidget {
-  // const MyApp({super.key});
-
-  final NetworkService _networkService = NetworkService();
-
-  // initState() 사용할 것
-  // initState() 내부에 아래 기능 로드
-
-
-  void _checkNetwork() async {
-    final status = await _networkService.checkStatus();
-
-    if(mounted && status.contains('x나 연결안되었다는 공통된 구문 포함되어 있다면')){
-      ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(status), backgroundColor: Colors.orange,
-              duration: Duration(seconds: 3),
-          )
-      );
-    }
-  }
-
-
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
