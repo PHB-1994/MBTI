@@ -84,7 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void _checkNetwork() async {
     final status = await _networkService.checkStatus();
 
-    if(mounted && status.contains('x나 연결안되었다는 공통된 구문 포함되어 있다면')){
+    if(mounted && status.contains('없')){
       ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text(status), backgroundColor: Colors.orange,
             duration: Duration(seconds: 3),

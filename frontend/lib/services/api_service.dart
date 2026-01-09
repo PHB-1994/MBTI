@@ -83,6 +83,7 @@ class ApiService {
   }
 
   static NetworkService _networkService = NetworkService();
+
   static Future<List<Question>> getQuestions() async {
     if(!await _networkService.isConnected()){
       throw Exception('네트워크에 연결되어 있지 않습니다.');

@@ -32,8 +32,10 @@ public class WebConfig implements WebMvcConfigurer {
                 // 3. 상황에 따라 테스트모드 웹사이트를 배포용 웹사이트로 사용할 수 있음
                 // 4. 다시 시작할 때마다 변경되는 port 번호 고정적으로 변경할 수 있다.
                 registry.addMapping("/api/**")
-                        .allowedOrigins("*" // 안드로이드 핸드폰을 테스트
+                        .allowedOrigins("http://localhost:*", // 윈도우 / 웹 / IOS 시뮬레이터 모든 포트 허용
+                                "http://10.0.2.2:*"           // 안드로이드 에뮬레이터 모든 포트 허용
                         )
+                        .allowCredentials(true)
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS")
                         .allowedHeaders("*");
 

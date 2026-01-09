@@ -21,6 +21,6 @@ class EnvConfig {
     print('environment : $environment');
     print('API BASE URL : $apiBaseUrl');
     print('APP NAME : $appName');
-    print('KAKAO MAP KEY : ${kakaoMapKey.isEmpty ? '설정됨' : '미설정'}');
+    print('KAKAO MAP KEY : ${kakaoMapKey.isNotEmpty ? '설정됨' : '미설정'}');
   }
 }

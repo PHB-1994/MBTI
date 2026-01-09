@@ -103,17 +103,17 @@ Future<bool> hasInternet() async {
   Future<String> checkStatus() async {
     // 네트워크 연결 체크
     if(!await isConnected()){
-      return '네트워크에 연결되어 있지 않습니다.';
+      return '네트워크에 연결 할 수 없습니다.';
     }
 
     // 인터넷 연결 체크
     if(!await hasInternet()){
-      return '인터넷 연결을 확인해주세요.';
+      return '인터넷 연결 할 수 없습니다.';
     }
 
     // 서버 연결 체크
     if(!await isServerConnected()){
-      return '서버에 연결할 수 없습니다. 백엔드가 실행 중인지 확인하세요.';
+      return '서버에 연결할 수 없습니다.';
     }
 
     return '모든 연결이 정상입니다.';
