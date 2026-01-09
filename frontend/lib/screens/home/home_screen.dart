@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/common/constants.dart';
+import 'package:frontend/services/network_service.dart';
 import 'package:frontend/widgets/home/guest_section.dart';
 import 'package:frontend/widgets/home/profile_menu.dart';
 import 'package:frontend/widgets/home/user_section.dart';
