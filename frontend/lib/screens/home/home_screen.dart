@@ -7,6 +7,7 @@ import 'package:frontend/widgets/home/user_section.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../../providers/auth_provider.dart';
+import '../../providers/theme_provider.dart';
 
 /*
 lib/
@@ -197,6 +198,17 @@ class _HomeScreenState extends State<HomeScreen> {
           appBar: AppBar(
             title: Text("MBTI 유형 검사"),
             actions: [
+              // 테마 변경 스위치
+              Row(
+                children: [
+                  Icon(Icons.dark_mode, size: 20),
+                  Switch(value: context.watch<ThemeProvider>().isDarkMode,
+                      onChanged: (value) {
+                    context.read<ThemeProvider>().toggleTheme(value);
+                      })
+                ],
+              ),
+
               // 로그인 상태에 따라 버튼 표기
               if (isLoggedIn)
                 // 분리된 프로필 메뉴 위젯에

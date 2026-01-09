@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:frontend/common/app_styles.dart';
 import 'package:frontend/common/constants.dart';
 import 'package:frontend/common/env_config.dart';
 import 'package:frontend/models/result_model.dart';
 import 'package:frontend/providers/auth_provider.dart';
+import 'package:frontend/providers/theme_provider.dart';
 import 'package:frontend/screens/history/result_detail_screen.dart';
 import 'package:frontend/screens/home/home_screen.dart';
 import 'package:frontend/screens/login/login_screen.dart';
@@ -27,7 +29,7 @@ Future<void> main() async {
   await dotenv.load(fileName: ".env.development");
 
   // 개발 중 상황 확인을 위해 환경 정보 출력
-  if(EnvConfig.isDevelopment) EnvConfig.printEnvInfo();
+  if (EnvConfig.isDevelopment) EnvConfig.printEnvInfo();
 
   /*
   자료형? 공간 내부가 텅텅 비어있는데, undefined 호출하여 에러를 발생하는 것이 아니라
@@ -118,13 +120,45 @@ class MyApp extends StatelessWidget {
     //                특정 경로를 개발자가 하나하나 설정하겠다.
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => AuthProvider())
+        ChangeNotifierProvider(create: (_) => AuthProvider()),
+        ChangeNotifierProvider(create: (_) => ThemeProvider()),
       ],
-      child: MaterialApp.router(
-        title: AppConstants.appName,
-        debugShowCheckedModeBanner: false,
-        // 경로설정에 대한 것은 : _router 라는 변수이름을 참고해서 사용하거라
-        routerConfig: _router,
+      child: Consumer<ThemeProvider>(
+        builder: (context, themeProvider, child) {
+          return MaterialApp.router(
+            title: AppConstants.appName,
+            debugShowCheckedModeBanner: false,
+            // 경로설정에 대한 것은 : _router 라는 변수이름을 참고해서 사용하거라
+            routerConfig: _router,
+
+            themeMode: themeProvider.themeMode,
+            // 라이트 모드 디자인
+            theme: ThemeData(
+              brightness: Brightness.light,
+              primarySwatch: Colors.blue,
+              // ThemeData 와 같이 색상 팔레트를 설정하는 속성에는
+              // 개발자가 작성한 변수명칭의 색상을 사용할 수 없음
+              // Material 에서 만든 색상만 가능
+              // primarySwatch: AppColors.primary,
+              scaffoldBackgroundColor: Colors.white,
+              appBarTheme: AppBarTheme(
+                backgroundColor: Colors.blue,
+                foregroundColor: Colors.white,
+              ),
+            ),
+
+            // 다크모드 디자인
+            darkTheme: ThemeData(
+              brightness: Brightness.dark,
+              primarySwatch: Colors.indigo,
+              scaffoldBackgroundColor: Colors.grey[900],
+              appBarTheme: AppBarTheme(
+                backgroundColor: Colors.grey[850],
+                foregroundColor: Colors.white,
+              ),
+            ),
+          );
+        },
       ),
       /*추후 라이트테마 다크 테마를 만들어서 세팅
       * theme

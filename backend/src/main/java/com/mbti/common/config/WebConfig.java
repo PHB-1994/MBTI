@@ -32,7 +32,34 @@ public class WebConfig implements WebMvcConfigurer {
                 // 3. 상황에 따라 테스트모드 웹사이트를 배포용 웹사이트로 사용할 수 있음
                 // 4. 다시 시작할 때마다 변경되는 port 번호 고정적으로 변경할 수 있다.
                 registry.addMapping("/api/**")
-                        .allowedOrigins("http://localhost:*", // 윈도우 / 웹 / IOS 시뮬레이터 모든 포트 허용
+                        /*
+                        .allowedOriginPatterns("*") + .allowCredentials(true)
+                        -> 가능
+
+                        .allowedOrigin("*") + .allowCredentials(true)
+                        -> 사용 불가
+                        -> 함께 사용하면 .allowedOrigin 주소문자열 내부에 * 사용 불가
+
+                        .allowedOrigin("*") + .allowCredentials(false)
+                        -> OK
+
+                        .allowedOrigin("특정주소:특정포트", "특정주소:특정포트") + .allowCredentials(true)
+                        -> * 가 없으므로 가능
+
+                        .allowCredentials(true)
+                        -> 프론트엔드와 백엔드 사이에서 다음 정보들이 오갈 수 있다.
+                            쿠키(로그인 세션 ID), 인증 헤더 Bearer <토큰> 같은 헤더, 클라이언트 보안 인증서
+                            -> 만약 false 로 하면
+                                    -> 어라?? 보안 설정 때문에 쿠키 못 보내네 ^^ 유감.. 매번 로그인 다시해
+                                        -> 로그인이 풀리는 현상이 발생
+
+                        .allowedOrigin("*") -> 내 친군데 아무나 다와 ^^ (무책임함 -> 브라우저가 차단)
+
+                        .allowedOriginPatterns("*") -> 제가 허용한 접속해도 되는 리스트들 이에요 ^^ -> 네 이쪽사람들만 들어오세요
+
+                            * 배포 치명적인 사유가 되므로, 반드시 개발 단계에서만 사용
+                         */
+                        .allowedOriginPatterns("http://localhost:*", // 윈도우 / 웹 / IOS 시뮬레이터 모든 포트 허용
                                 "http://10.0.2.2:*"           // 안드로이드 에뮬레이터 모든 포트 허용
                         )
                         .allowCredentials(true)

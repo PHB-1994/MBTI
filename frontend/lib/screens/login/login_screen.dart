@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/common/app_styles.dart';
 import 'package:frontend/providers/auth_provider.dart';
 import 'package:frontend/services/api_service.dart';
 import 'package:go_router/go_router.dart';
@@ -80,7 +81,6 @@ class _LoginScreenState extends State<LoginScreen> {
         // 로그인 후 이동하고자 하는 화면 이동
         context.go("/");
       }
-
     } catch (e) {
       if (mounted) {
         setState(() {
@@ -110,19 +110,24 @@ class _LoginScreenState extends State<LoginScreen> {
       body: SingleChildScrollView(
         child: Center(
           child: Container(
-            padding: EdgeInsets.symmetric(vertical: 50, horizontal: 20),
+            padding: AppPadding.page,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(Icons.person, size: 100, color: Colors.blue),
-                SizedBox(height: 30),
+                Icon(
+                  Icons.person,
+                  size: AppIconSize.huge,
+                  color: AppColors.primary,
+                ),
+                AppSizedBox.h30,
 
                 Text(
                   'MBTI 검사를 위해\n로그인해주세요.',
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  style: AppTextStyles.h3,
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: 40),
+
+                AppSizedBox.h40,
 
                 SizedBox(
                   width: 300,
@@ -176,7 +181,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                   ),
-
                 ),
                 SizedBox(height: 20),
 
@@ -184,10 +188,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: [
                     Text('계정이 없으신가요?'),
                     TextButton(
-                        onPressed: () => context.go('/signup'),
-                        child: Text('회원가입하기'))
+                      onPressed: () => context.go('/signup'),
+                      child: Text('회원가입하기'),
+                    ),
                   ],
-                )
+                ),
               ],
             ),
           ),
